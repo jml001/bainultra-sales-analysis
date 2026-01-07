@@ -237,6 +237,11 @@
             border-radius: 16px;
             padding: 1.5rem;
             margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .chart-container canvas {
+            max-height: 100% !important;
         }
 
         .chart-title {
@@ -531,12 +536,12 @@
 
         <div class="chart-container">
             <div class="chart-title">Agency Revenue: 2024 vs 2025</div>
-            <canvas id="agencyComparisonChart" height="400"></canvas>
+            <canvas id="agencyComparisonChart"></canvas>
         </div>
 
         <div class="chart-container">
             <div class="chart-title">Year-over-Year Change by Agency</div>
-            <canvas id="yoyChangeChart" height="350"></canvas>
+            <canvas id="yoyChangeChart"></canvas>
         </div>
     </section>
 
@@ -1044,7 +1049,8 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
+                aspectRatio: 2.5,
                 plugins: {
                     legend: {
                         position: 'top',
@@ -1104,7 +1110,8 @@
             options: {
                 indexAxis: 'y',
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
+                aspectRatio: 1.8,
                 plugins: {
                     legend: { display: false },
                     tooltip: {
