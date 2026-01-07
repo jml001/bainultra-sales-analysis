@@ -459,6 +459,7 @@
             <div class="nav-links">
                 <a href="index.html">Overview</a>
                 <a href="#performance" class="active">Agency Performance</a>
+                <a href="#data-quality">Data Quality</a>
                 <a href="#rankings">Rankings</a>
                 <a href="#top-accounts">Top Accounts</a>
             </div>
@@ -542,6 +543,52 @@
         <div class="chart-container">
             <div class="chart-title">Year-over-Year Change by Agency</div>
             <canvas id="yoyChangeChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Data Quality Scores -->
+    <section class="section" id="data-quality">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">Salesforce Data Quality Score</h2>
+                <p class="section-subtitle">How well agencies maintain their account data (Activity + Phone + Address + Website + Recent Updates)</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="dataQualityChart"></canvas>
+        </div>
+
+        <div class="grid-3" style="margin-top: 1.5rem;">
+            <div class="card" style="border-left: 4px solid var(--accent-green);">
+                <div class="card-title">Top Performers</div>
+                <div class="card-value positive">A+</div>
+                <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                    <strong>DME Marketing</strong> - 96%<br>
+                    <strong>Personal Touch</strong> - 94%<br>
+                    <strong>The Shae Group</strong> - 94%
+                </div>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--accent-yellow);">
+                <div class="card-title">Need Improvement</div>
+                <div class="card-value neutral">B</div>
+                <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                    <strong>VJS Marketing</strong> - 90%<br>
+                    <strong>BU Ontario</strong> - 91%<br>
+                    <strong>Bridge Agency</strong> - 91%
+                </div>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--accent-blue);">
+                <div class="card-title">Score Breakdown</div>
+                <div class="card-value" style="font-size: 1.25rem;">5 Factors</div>
+                <div style="font-size: 0.75rem; color: var(--text-secondary);">
+                    Activity Date (20%)<br>
+                    Phone Number (20%)<br>
+                    Billing Address (20%)<br>
+                    Website (20%)<br>
+                    Updated in 2024+ (20%)
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1136,6 +1183,68 @@
                     y: {
                         grid: { display: false },
                         ticks: { color: '#94a3b8' }
+                    }
+                }
+            }
+        });
+
+        // Data Quality Score Chart
+        const qualityAgencies = [
+            'DME Marketing', 'Personal Touch', 'Shae Group', 'Phoenix SG',
+            'Alpha Sales', 'ADream Decor', 'Premier Decor', 'Rain Company',
+            'Bridge Agency', 'BU Ontario', 'VJS Marketing', 'ClearWater'
+        ];
+
+        // Scores calculated: (Activity% + Phone% + Address% + Website% + RecentUpdate%) / 5
+        const qualityScores = [96, 94, 94, 95, 93, 92, 92, 93, 91, 91, 90, 91];
+
+        const qualityColors = qualityScores.map(score => {
+            if (score >= 94) return 'rgba(16, 185, 129, 0.8)';
+            if (score >= 91) return 'rgba(234, 179, 8, 0.8)';
+            return 'rgba(239, 68, 68, 0.8)';
+        });
+
+        new Chart(document.getElementById('dataQualityChart'), {
+            type: 'bar',
+            data: {
+                labels: qualityAgencies,
+                datasets: [{
+                    label: 'Data Quality Score',
+                    data: qualityScores,
+                    backgroundColor: qualityColors,
+                    borderWidth: 0,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 2.5,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return 'Score: ' + context.parsed.y + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8', maxRotation: 45 }
+                    },
+                    y: {
+                        min: 85,
+                        max: 100,
+                        grid: { color: '#1e293b' },
+                        ticks: {
+                            color: '#94a3b8',
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
                     }
                 }
             }
