@@ -174,13 +174,6 @@
             transform: translateY(-2px);
         }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
         .card-title {
             font-size: 0.875rem;
             color: var(--text-secondary);
@@ -193,20 +186,9 @@
             margin: 0.5rem 0;
         }
 
-        .card-change {
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
         .positive { color: var(--accent-green); }
         .negative { color: var(--accent-red); }
         .neutral { color: var(--accent-yellow); }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
 
         .grid-3 {
             display: grid;
@@ -214,21 +196,15 @@
             gap: 1.5rem;
         }
 
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
         @media (max-width: 1200px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); }
             .grid-3 { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .grid-3 { grid-template-columns: 1fr; }
             h1 { font-size: 2.5rem; }
             .hero-stats { gap: 2rem; }
+            .nav-links { display: none; }
         }
 
         .chart-container {
@@ -238,10 +214,6 @@
             padding: 1.5rem;
             margin-bottom: 2rem;
             position: relative;
-        }
-
-        .chart-container canvas {
-            max-height: 100% !important;
         }
 
         .chart-title {
@@ -257,13 +229,13 @@
 
         .agency-table th,
         .agency-table td {
-            padding: 1rem;
+            padding: 0.875rem;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
         }
 
         .agency-table th {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             color: var(--text-secondary);
             text-transform: uppercase;
@@ -276,6 +248,13 @@
 
         .agency-name {
             font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .territory {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 400;
         }
 
         .rank-badge {
@@ -293,32 +272,6 @@
         .rank-2 { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); color: #000; }
         .rank-3 { background: linear-gradient(135deg, #cd7f32, #b87333); color: #fff; }
         .rank-other { background: var(--bg-card-hover); color: var(--text-secondary); }
-
-        .trend-bar {
-            height: 8px;
-            border-radius: 4px;
-            background: var(--bg-card-hover);
-            overflow: hidden;
-            min-width: 100px;
-        }
-
-        .trend-bar-fill {
-            height: 100%;
-            border-radius: 4px;
-            transition: width 0.5s ease;
-        }
-
-        .progress-bar {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .progress-value {
-            font-size: 0.875rem;
-            font-weight: 600;
-            min-width: 60px;
-        }
 
         footer {
             text-align: center;
@@ -390,7 +343,7 @@
         }
 
         .account-name {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 500;
             color: var(--text-secondary);
             white-space: nowrap;
@@ -404,49 +357,9 @@
             margin-top: 0.25rem;
         }
 
-        .insight-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        @media (max-width: 1200px) {
-            .insight-cards { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            .insight-cards { grid-template-columns: 1fr; }
-        }
-
-        .insight-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border-left: 4px solid;
-        }
-
-        .insight-card.green { border-left-color: var(--accent-green); }
-        .insight-card.red { border-left-color: var(--accent-red); }
-        .insight-card.yellow { border-left-color: var(--accent-yellow); }
-        .insight-card.blue { border-left-color: var(--accent-blue); }
-
-        .insight-title {
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .insight-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .insight-desc {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
+        .scroll-table {
+            max-height: 600px;
+            overflow-y: auto;
         }
     </style>
 </head>
@@ -458,7 +371,7 @@
             <img src="logo.png" alt="BainUltra" class="logo">
             <div class="nav-links">
                 <a href="index.html">Overview</a>
-                <a href="#performance" class="active">Agency Performance</a>
+                <a href="#performance" class="active">Performance</a>
                 <a href="#data-quality">Data Quality</a>
                 <a href="#rankings">Rankings</a>
                 <a href="#top-accounts">Top Accounts</a>
@@ -471,23 +384,23 @@
             <span class="hero-badge">Agency Network Analysis</span>
             <h1>Agency Performance<br>2024 vs 2025</h1>
             <p class="subtitle">
-                Comprehensive review of agency network performance, identifying growth opportunities and areas requiring attention.
+                Comprehensive review of 24 agency territories with revenue trends and data quality scores.
             </p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="hero-stat-value" style="color: var(--accent-purple);">25</div>
+                    <div class="hero-stat-value" style="color: var(--accent-purple);">24</div>
                     <div class="hero-stat-label">Active Agencies</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="hero-stat-value" style="color: var(--accent-red);">-12%</div>
+                    <div class="hero-stat-value" style="color: var(--accent-red);">-11%</div>
                     <div class="hero-stat-label">Avg YoY Change</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="hero-stat-value" style="color: var(--accent-green);">4</div>
+                    <div class="hero-stat-value" style="color: var(--accent-green);">3</div>
                     <div class="hero-stat-label">Agencies Growing</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="hero-stat-value" style="color: var(--accent-blue);">$15.3M</div>
+                    <div class="hero-stat-value" style="color: var(--accent-blue);">$15.1M</div>
                     <div class="hero-stat-label">Total 2025 Revenue</div>
                 </div>
             </div>
@@ -502,41 +415,36 @@
             </div>
         </div>
 
-        <div class="insight-cards">
-            <div class="insight-card green">
-                <div class="insight-title">Growing Agencies</div>
-                <div class="insight-value positive">4 of 25</div>
-                <div class="insight-desc">The Shae Group (+3%), Summit Architectural (+9%), K&B Pro Group (+11%), Staar Consultants (+7%)</div>
+        <div class="grid-3">
+            <div class="card" style="border-left: 4px solid var(--accent-green);">
+                <div class="card-title">Growing Agencies</div>
+                <div class="card-value positive">3 of 24</div>
+                <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                    <strong>Summit Arch</strong> (CO/NM) +9%<br>
+                    <strong>Shae Group</strong> (IL/WI/MN) +3%<br>
+                    <strong>BainUltra Corp</strong> +8%
+                </div>
             </div>
-            <div class="insight-card red">
-                <div class="insight-title">Biggest Decline</div>
-                <div class="insight-value negative">-33%</div>
-                <div class="insight-desc">Molloy Group dropped from $368K to $245K, losing 36% of order volume</div>
+            <div class="card" style="border-left: 4px solid var(--accent-red);">
+                <div class="card-title">Biggest Declines</div>
+                <div class="card-value negative">-30%</div>
+                <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                    <strong>D'Antoni</strong> (IN/TN/KY) -30%<br>
+                    <strong>ClearWater</strong> (MI/OH) -26%<br>
+                    <strong>BU Ontario</strong> -24%
+                </div>
             </div>
-            <div class="insight-card yellow">
-                <div class="insight-title">Top Agency Share</div>
-                <div class="insight-value">40%</div>
-                <div class="insight-desc">Top 5 agencies control 40% of total agency-attributed revenue</div>
-            </div>
-            <div class="insight-card blue">
-                <div class="insight-title">Avg Account Value</div>
-                <div class="insight-value">$68K</div>
-                <div class="insight-desc">Average revenue per account across top 25 accounts per agency</div>
-            </div>
-            <div class="insight-card red">
-                <div class="insight-title">ClearWater Collapse</div>
-                <div class="insight-value negative">-26%</div>
-                <div class="insight-desc">Revenue dropped from $1.26M to $0.93M with 23% fewer orders</div>
-            </div>
-            <div class="insight-card green">
-                <div class="insight-title">Alpha Sales Stability</div>
-                <div class="insight-value positive">-3%</div>
-                <div class="insight-desc">Near-flat performance in declining market shows strong account retention</div>
+            <div class="card" style="border-left: 4px solid var(--accent-blue);">
+                <div class="card-title">Top 5 Share</div>
+                <div class="card-value">49%</div>
+                <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                    Phoenix, Alpha, Premier, Ontario, Shae represent 49% of agency revenue
+                </div>
             </div>
         </div>
 
-        <div class="chart-container">
-            <div class="chart-title">Agency Revenue: 2024 vs 2025</div>
+        <div class="chart-container" style="margin-top: 2rem;">
+            <div class="chart-title">Agency Revenue: 2024 vs 2025 (Top 12)</div>
             <canvas id="agencyComparisonChart"></canvas>
         </div>
 
@@ -565,17 +473,19 @@
                 <div class="card-value positive">A+</div>
                 <div style="font-size: 0.875rem; color: var(--text-secondary);">
                     <strong>Personal Touch</strong> (FL) - 100%<br>
-                    <strong>Bridge Agency GA</strong> (GA) - 100%<br>
-                    <strong>S&D Lighting</strong> (Atlantic) - 100%
+                    <strong>Bridge Agency GA</strong> - 100%<br>
+                    <strong>S&D Lighting</strong> (Atlantic) - 100%<br>
+                    <strong>Utah-Wyoming</strong> - 100%<br>
+                    <strong>Hawaii</strong> - 100%
                 </div>
             </div>
             <div class="card" style="border-left: 4px solid var(--accent-yellow);">
                 <div class="card-title">Need Attention</div>
                 <div class="card-value neutral">C</div>
                 <div style="font-size: 0.875rem; color: var(--text-secondary);">
-                    <strong>Greater Montreal</strong> (QC) - 82%<br>
-                    <strong>Quebec excl MTL</strong> (QC/ON) - 84%<br>
-                    8 accounts not touched in 2025
+                    <strong>Greater Montreal</strong> - 82%<br>
+                    <strong>Quebec excl MTL</strong> - 84%<br>
+                    13 accounts not touched in 2025
                 </div>
             </div>
             <div class="card" style="border-left: 4px solid var(--accent-blue);">
@@ -594,19 +504,20 @@
         <div class="section-header">
             <div>
                 <h2 class="section-title">Agency Rankings</h2>
-                <p class="section-subtitle">Full performance breakdown by agency</p>
+                <p class="section-subtitle">Complete performance breakdown - all 24 agencies</p>
             </div>
         </div>
 
         <div class="chart-container">
+            <div class="scroll-table">
             <table class="agency-table">
                 <thead>
                     <tr>
                         <th>Rank</th>
-                        <th>Agency</th>
+                        <th>Agency (Territory)</th>
                         <th>2024 Revenue</th>
                         <th>2025 Revenue</th>
-                        <th>YoY Change</th>
+                        <th>YoY</th>
                         <th>2025 Score</th>
                         <th>Accounts</th>
                     </tr>
@@ -614,186 +525,223 @@
                 <tbody>
                     <tr>
                         <td><span class="rank-badge rank-1">1</span></td>
-                        <td class="agency-name">Phoenix S G, LLC <span style="color: var(--text-muted);">(NY/NJ/PA)</span></td>
-                        <td>$2,513K</td>
-                        <td>$2,034K</td>
+                        <td><span class="agency-name">Phoenix S G, LLC</span> <span class="territory">(NY/NJ/PA)</span></td>
+                        <td>$2,507K</td>
+                        <td>$2,025K</td>
                         <td><span class="negative">-19%</span></td>
                         <td><span class="positive">93%</span></td>
                         <td>157</td>
                     </tr>
                     <tr>
                         <td><span class="rank-badge rank-2">2</span></td>
-                        <td class="agency-name">ADream Decor <span style="color: var(--text-muted);">(TX/LA/OK)</span></td>
-                        <td>$1,890K</td>
-                        <td>$1,756K</td>
-                        <td><span class="negative">-7%</span></td>
-                        <td><span class="positive">97%</span></td>
-                        <td>181</td>
+                        <td><span class="agency-name">Alpha Sales</span> <span class="territory">(New England)</span></td>
+                        <td>$1,793K</td>
+                        <td>$1,732K</td>
+                        <td><span class="negative">-3%</span></td>
+                        <td><span class="positive">99%</span></td>
+                        <td>123</td>
                     </tr>
                     <tr>
                         <td><span class="rank-badge rank-3">3</span></td>
-                        <td class="agency-name">Premier Decorative Group <span style="color: var(--text-muted);">(CA/AZ/NV)</span></td>
-                        <td>$1,652K</td>
-                        <td>$1,507K</td>
+                        <td><span class="agency-name">Premier Decorative Group</span> <span class="territory">(CA/AZ/NV)</span></td>
+                        <td>$1,651K</td>
+                        <td>$1,509K</td>
                         <td><span class="negative">-9%</span></td>
                         <td><span class="positive">95%</span></td>
                         <td>173</td>
                     </tr>
                     <tr>
                         <td><span class="rank-badge rank-other">4</span></td>
-                        <td class="agency-name">Alpha Sales <span style="color: var(--text-muted);">(New England)</span></td>
-                        <td>$1,786K</td>
-                        <td>$1,734K</td>
-                        <td><span class="negative">-3%</span></td>
-                        <td><span class="positive">99%</span></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td><span class="rank-badge rank-other">5</span></td>
-                        <td class="agency-name">The Bridge Agency <span style="color: var(--text-muted);">(Southeast)</span></td>
-                        <td>$1,420K</td>
-                        <td>$1,215K</td>
-                        <td><span class="negative">-14%</span></td>
-                        <td><span class="positive">99%</span></td>
-                        <td>141</td>
-                    </tr>
-                    <tr>
-                        <td><span class="rank-badge rank-other">6</span></td>
-                        <td class="agency-name">BU Agent - Ontario <span style="color: var(--text-muted);">(ON)</span></td>
-                        <td>$1,539K</td>
-                        <td>$1,173K</td>
+                        <td><span class="agency-name">BU Agent - Ontario</span> <span class="territory">(ON)</span></td>
+                        <td>$1,535K</td>
+                        <td>$1,168K</td>
                         <td><span class="negative">-24%</span></td>
                         <td><span class="positive">99%</span></td>
                         <td>73</td>
                     </tr>
                     <tr>
-                        <td><span class="rank-badge rank-other">7</span></td>
-                        <td class="agency-name">The Shae Group <span style="color: var(--text-muted);">(IL/WI/MN)</span></td>
-                        <td>$1,053K</td>
-                        <td>$1,085K</td>
+                        <td><span class="rank-badge rank-other">5</span></td>
+                        <td><span class="agency-name">The Shae Group</span> <span class="territory">(IL/WI/MN)</span></td>
+                        <td>$1,052K</td>
+                        <td>$1,086K</td>
                         <td><span class="positive">+3%</span></td>
                         <td><span class="positive">97%</span></td>
                         <td>97</td>
                     </tr>
                     <tr>
-                        <td><span class="rank-badge rank-other">8</span></td>
-                        <td class="agency-name">Personal Touch Sales <span style="color: var(--text-muted);">(FL)</span></td>
-                        <td>$987K</td>
-                        <td>$892K</td>
-                        <td><span class="negative">-10%</span></td>
-                        <td><span class="positive">100%</span></td>
-                        <td>81</td>
-                    </tr>
-                    <tr>
-                        <td><span class="rank-badge rank-other">9</span></td>
-                        <td class="agency-name">DME Marketing <span style="color: var(--text-muted);">(BC/AB/SK/MB)</span></td>
-                        <td>$876K</td>
-                        <td>$724K</td>
-                        <td><span class="negative">-17%</span></td>
+                        <td><span class="rank-badge rank-other">6</span></td>
+                        <td><span class="agency-name">DME Marketing</span> <span class="territory">(BC/AB/SK/MB)</span></td>
+                        <td>$1,069K</td>
+                        <td>$943K</td>
+                        <td><span class="negative">-12%</span></td>
                         <td><span class="positive">99%</span></td>
                         <td>75</td>
                     </tr>
                     <tr>
-                        <td><span class="rank-badge rank-other">10</span></td>
-                        <td class="agency-name">ClearWater Sales LLC <span style="color: var(--text-muted);">(MI/OH/PA)</span></td>
-                        <td>$1,257K</td>
-                        <td>$927K</td>
+                        <td><span class="rank-badge rank-other">7</span></td>
+                        <td><span class="agency-name">ADream Decor</span> <span class="territory">(TX/LA/OK/AR)</span></td>
+                        <td>$1,053K</td>
+                        <td>$989K</td>
+                        <td><span class="negative">-6%</span></td>
+                        <td><span class="positive">97%</span></td>
+                        <td>181</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">8</span></td>
+                        <td><span class="agency-name">ClearWater Sales LLC</span> <span class="territory">(MI/OH/W.PA)</span></td>
+                        <td>$1,259K</td>
+                        <td>$929K</td>
                         <td><span class="negative">-26%</span></td>
                         <td><span class="positive">98%</span></td>
                         <td>62</td>
                     </tr>
                     <tr>
-                        <td><span class="rank-badge rank-other">11</span></td>
-                        <td class="agency-name">VJS Marketing <span style="color: var(--text-muted);">(MO/IA/KS/NE)</span></td>
-                        <td>$745K</td>
-                        <td>$632K</td>
-                        <td><span class="negative">-15%</span></td>
+                        <td><span class="rank-badge rank-other">9</span></td>
+                        <td><span class="agency-name">The Bridge Agency</span> <span class="territory">(NC/SC/AL/MS)</span></td>
+                        <td>$833K</td>
+                        <td>$778K</td>
+                        <td><span class="negative">-7%</span></td>
+                        <td><span class="positive">99%</span></td>
+                        <td>141</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">10</span></td>
+                        <td><span class="agency-name">VJS Marketing</span> <span class="territory">(MO/IA/KS/NE)</span></td>
+                        <td>$804K</td>
+                        <td>$711K</td>
+                        <td><span class="negative">-12%</span></td>
                         <td><span class="positive">99%</span></td>
                         <td>79</td>
                     </tr>
                     <tr>
-                        <td><span class="rank-badge rank-other">12</span></td>
-                        <td class="agency-name">D'Antoni Sales Group <span style="color: var(--text-muted);">(IN/TN/KY)</span></td>
-                        <td>$687K</td>
-                        <td>$578K</td>
-                        <td><span class="negative">-16%</span></td>
-                        <td><span class="positive">97%</span></td>
-                        <td>62</td>
-                    </tr>
-                    <tr>
-                        <td><span class="rank-badge rank-other">13</span></td>
-                        <td class="agency-name">The Rain Company <span style="color: var(--text-muted);">(WA/OR/ID/MT)</span></td>
-                        <td>$623K</td>
-                        <td>$534K</td>
-                        <td><span class="negative">-14%</span></td>
-                        <td><span class="positive">98%</span></td>
-                        <td>57</td>
-                    </tr>
-                    <tr>
-                        <td><span class="rank-badge rank-other">14</span></td>
-                        <td class="agency-name">JDL Associates <span style="color: var(--text-muted);">(VA/MD/DC)</span></td>
-                        <td>$567K</td>
-                        <td>$489K</td>
-                        <td><span class="negative">-14%</span></td>
-                        <td><span class="positive">98%</span></td>
-                        <td>55</td>
-                    </tr>
-                    <tr>
-                        <td><span class="rank-badge rank-other">15</span></td>
-                        <td class="agency-name">Greater Montreal <span style="color: var(--text-muted);">(QC)</span></td>
-                        <td>$456K</td>
-                        <td>$378K</td>
-                        <td><span class="negative">-17%</span></td>
-                        <td><span class="neutral">82%</span></td>
-                        <td>44</td>
-                    </tr>
-                    <tr>
-                        <td><span class="rank-badge rank-other">16</span></td>
-                        <td class="agency-name">Summit Architectural <span style="color: var(--text-muted);">(CO/NM)</span></td>
-                        <td>$552K</td>
-                        <td>$602K</td>
+                        <td><span class="rank-badge rank-other">11</span></td>
+                        <td><span class="agency-name">Summit Architectural</span> <span class="territory">(CO/NM)</span></td>
+                        <td>$553K</td>
+                        <td>$601K</td>
                         <td><span class="positive">+9%</span></td>
                         <td><span class="positive">96%</span></td>
                         <td>25</td>
                     </tr>
                     <tr>
-                        <td><span class="rank-badge rank-other">17</span></td>
-                        <td class="agency-name">The Bridge Agency GA <span style="color: var(--text-muted);">(GA)</span></td>
-                        <td>$378K</td>
-                        <td>$312K</td>
-                        <td><span class="negative">-17%</span></td>
+                        <td><span class="rank-badge rank-other">12</span></td>
+                        <td><span class="agency-name">Personal Touch Sales</span> <span class="territory">(FL)</span></td>
+                        <td>$616K</td>
+                        <td>$530K</td>
+                        <td><span class="negative">-14%</span></td>
+                        <td><span class="positive">100%</span></td>
+                        <td>81</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">13</span></td>
+                        <td><span class="agency-name">BainUltra Corporate</span> <span class="territory">(Direct/Other)</span></td>
+                        <td>$440K</td>
+                        <td>$476K</td>
+                        <td><span class="positive">+8%</span></td>
+                        <td><span class="positive">100%</span></td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">14</span></td>
+                        <td><span class="agency-name">Greater Montreal</span> <span class="territory">(QC - Montreal)</span></td>
+                        <td>$394K</td>
+                        <td>$317K</td>
+                        <td><span class="negative">-20%</span></td>
+                        <td><span class="neutral">82%</span></td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">15</span></td>
+                        <td><span class="agency-name">JDL Associates</span> <span class="territory">(VA/MD/DC/WV)</span></td>
+                        <td>$354K</td>
+                        <td>$305K</td>
+                        <td><span class="negative">-14%</span></td>
+                        <td><span class="positive">98%</span></td>
+                        <td>55</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">16</span></td>
+                        <td><span class="agency-name">The Bridge Agency GA</span> <span class="territory">(GA)</span></td>
+                        <td>$254K</td>
+                        <td>$207K</td>
+                        <td><span class="negative">-19%</span></td>
                         <td><span class="positive">100%</span></td>
                         <td>34</td>
                     </tr>
                     <tr>
+                        <td><span class="rank-badge rank-other">17</span></td>
+                        <td><span class="agency-name">D'Antoni Sales Group</span> <span class="territory">(IN/TN/KY)</span></td>
+                        <td>$243K</td>
+                        <td>$171K</td>
+                        <td><span class="negative">-30%</span></td>
+                        <td><span class="positive">97%</span></td>
+                        <td>62</td>
+                    </tr>
+                    <tr>
                         <td><span class="rank-badge rank-other">18</span></td>
-                        <td class="agency-name">Quebec excl MTL <span style="color: var(--text-muted);">(QC/Ottawa)</span></td>
-                        <td>$345K</td>
-                        <td>$287K</td>
-                        <td><span class="negative">-17%</span></td>
+                        <td><span class="agency-name">The Rain Company</span> <span class="territory">(WA/OR/ID/MT/AK)</span></td>
+                        <td>$186K</td>
+                        <td>$152K</td>
+                        <td><span class="negative">-18%</span></td>
+                        <td><span class="positive">98%</span></td>
+                        <td>57</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">19</span></td>
+                        <td><span class="agency-name">Quebec excl MTL</span> <span class="territory">(QC/Ottawa)</span></td>
+                        <td>$167K</td>
+                        <td>$137K</td>
+                        <td><span class="negative">-18%</span></td>
                         <td><span class="neutral">84%</span></td>
                         <td>31</td>
                     </tr>
                     <tr>
-                        <td><span class="rank-badge rank-other">19</span></td>
-                        <td class="agency-name">S&D Lighting Group <span style="color: var(--text-muted);">(Atlantic Canada)</span></td>
-                        <td>$287K</td>
-                        <td>$234K</td>
-                        <td><span class="negative">-18%</span></td>
+                        <td><span class="rank-badge rank-other">20</span></td>
+                        <td><span class="agency-name">S&D Lighting Group</span> <span class="territory">(NB/NS/NL/PE)</span></td>
+                        <td>$93K</td>
+                        <td>$89K</td>
+                        <td><span class="negative">-5%</span></td>
                         <td><span class="positive">100%</span></td>
                         <td>21</td>
                     </tr>
                     <tr>
-                        <td><span class="rank-badge rank-other">20</span></td>
-                        <td class="agency-name">Hawaii <span style="color: var(--text-muted);">(HI)</span></td>
-                        <td>$98K</td>
-                        <td>$76K</td>
-                        <td><span class="negative">-22%</span></td>
+                        <td><span class="rank-badge rank-other">21</span></td>
+                        <td><span class="agency-name">Utah - Wyoming</span> <span class="territory">(UT/WY)</span></td>
+                        <td>$88K</td>
+                        <td>$82K</td>
+                        <td><span class="negative">-6%</span></td>
+                        <td><span class="positive">100%</span></td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">22</span></td>
+                        <td><span class="agency-name">Upstate New York</span> <span class="territory">(Upstate NY)</span></td>
+                        <td>$51K</td>
+                        <td>$48K</td>
+                        <td><span class="negative">-6%</span></td>
+                        <td><span class="positive">100%</span></td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">23</span></td>
+                        <td><span class="agency-name">Mexico</span> <span class="territory">(MX)</span></td>
+                        <td>$32K</td>
+                        <td>$14K</td>
+                        <td><span class="negative">-55%</span></td>
+                        <td><span class="neutral">50%</span></td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">24</span></td>
+                        <td><span class="agency-name">Hawaii</span> <span class="territory">(HI)</span></td>
+                        <td>$15K</td>
+                        <td>$15K</td>
+                        <td><span class="neutral">0%</span></td>
                         <td><span class="positive">100%</span></td>
                         <td>5</td>
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </section>
 
@@ -801,17 +749,17 @@
         <div class="section-header">
             <div>
                 <h2 class="section-title">Top Accounts by Agency</h2>
-                <p class="section-subtitle">Average sales and top 5 accounts for leading agencies</p>
+                <p class="section-subtitle">Top 5 accounts for major agencies (2024+2025 combined revenue)</p>
             </div>
         </div>
 
         <div class="top-accounts-card">
             <div class="agency-header">
-                <h3>Phoenix S G, LLC</h3>
+                <h3>Phoenix S G, LLC <span class="territory">(NY/NJ/PA)</span></h3>
                 <div class="agency-stats">
                     <div class="agency-stat">
-                        <div class="agency-stat-value">$89K</div>
-                        <div class="agency-stat-label">Avg Top 25 Account</div>
+                        <div class="agency-stat-value">$4.5M</div>
+                        <div class="agency-stat-label">2024+2025 Revenue</div>
                     </div>
                     <div class="agency-stat">
                         <div class="agency-stat-value negative">-19%</div>
@@ -822,34 +770,34 @@
             <div class="account-list">
                 <div class="account-item">
                     <div class="account-name">Ferguson Bayport</div>
-                    <div class="account-revenue">$340K</div>
+                    <div class="account-revenue">$342K</div>
                 </div>
                 <div class="account-item">
                     <div class="account-name">Decor Planet Brooklyn</div>
-                    <div class="account-revenue">$287K</div>
+                    <div class="account-revenue">$298K</div>
                 </div>
                 <div class="account-item">
                     <div class="account-name">Quality Bath NYC</div>
-                    <div class="account-revenue">$234K</div>
+                    <div class="account-revenue">$267K</div>
                 </div>
                 <div class="account-item">
                     <div class="account-name">Home Center Queens</div>
-                    <div class="account-revenue">$198K</div>
+                    <div class="account-revenue">$234K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Bath Plus NJ</div>
-                    <div class="account-revenue">$167K</div>
+                    <div class="account-name">Hardware Designs Inc</div>
+                    <div class="account-revenue">$198K</div>
                 </div>
             </div>
         </div>
 
         <div class="top-accounts-card">
             <div class="agency-header">
-                <h3>Alpha Sales</h3>
+                <h3>Alpha Sales <span class="territory">(New England)</span></h3>
                 <div class="agency-stats">
                     <div class="agency-stat">
-                        <div class="agency-stat-value">$95K</div>
-                        <div class="agency-stat-label">Avg Top 25 Account</div>
+                        <div class="agency-stat-value">$3.5M</div>
+                        <div class="agency-stat-label">2024+2025 Revenue</div>
                     </div>
                     <div class="agency-stat">
                         <div class="agency-stat-value negative">-3%</div>
@@ -859,73 +807,35 @@
             </div>
             <div class="account-list">
                 <div class="account-item">
-                    <div class="account-name">Studio 41 Highland Park</div>
-                    <div class="account-revenue">$961K</div>
-                </div>
-                <div class="account-item">
-                    <div class="account-name">Hardware Designs Inc</div>
-                    <div class="account-revenue">$514K</div>
-                </div>
-                <div class="account-item">
-                    <div class="account-name">Crawford Supply Elk Grove</div>
-                    <div class="account-revenue">$187K</div>
-                </div>
-                <div class="account-item">
-                    <div class="account-name">Kitchen & Bath Classics</div>
-                    <div class="account-revenue">$156K</div>
-                </div>
-                <div class="account-item">
-                    <div class="account-name">Midwest Bath Supply</div>
-                    <div class="account-revenue">$134K</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="top-accounts-card">
-            <div class="agency-header">
-                <h3>Premier Decorative Group</h3>
-                <div class="agency-stats">
-                    <div class="agency-stat">
-                        <div class="agency-stat-value">$75K</div>
-                        <div class="agency-stat-label">Avg Top 25 Account</div>
-                    </div>
-                    <div class="agency-stat">
-                        <div class="agency-stat-value negative">-9%</div>
-                        <div class="agency-stat-label">YoY Change</div>
-                    </div>
-                </div>
-            </div>
-            <div class="account-list">
-                <div class="account-item">
-                    <div class="account-name">Home and Stone / Quality Bath</div>
-                    <div class="account-revenue">$968K</div>
-                </div>
-                <div class="account-item">
-                    <div class="account-name">Advance Plumbing</div>
-                    <div class="account-revenue">$525K</div>
-                </div>
-                <div class="account-item">
                     <div class="account-name">Portland Group Billerica</div>
-                    <div class="account-revenue">$312K</div>
+                    <div class="account-revenue">$347K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Designer Bath Salem</div>
-                    <div class="account-revenue">$187K</div>
+                    <div class="account-name">Torrco - Waterbury</div>
+                    <div class="account-revenue">$340K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Boston Kitchen Bath</div>
-                    <div class="account-revenue">$145K</div>
+                    <div class="account-name">Sink & Spout Manchester</div>
+                    <div class="account-revenue">$257K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">Waterware Hartford</div>
+                    <div class="account-revenue">$224K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">White's Plumbing</div>
+                    <div class="account-revenue">$200K</div>
                 </div>
             </div>
         </div>
 
         <div class="top-accounts-card">
             <div class="agency-header">
-                <h3>BU Agent - Ontario</h3>
+                <h3>BU Agent - Ontario <span class="territory">(ON)</span></h3>
                 <div class="agency-stats">
                     <div class="agency-stat">
-                        <div class="agency-stat-value">$94K</div>
-                        <div class="agency-stat-label">Avg Top 25 Account</div>
+                        <div class="agency-stat-value">$2.7M</div>
+                        <div class="agency-stat-label">2024+2025 Revenue</div>
                     </div>
                     <div class="agency-stat">
                         <div class="agency-stat-value negative">-24%</div>
@@ -935,35 +845,73 @@
             </div>
             <div class="account-list">
                 <div class="account-item">
-                    <div class="account-name">Taps Wholesale Toronto</div>
-                    <div class="account-revenue">$412K</div>
-                </div>
-                <div class="account-item">
-                    <div class="account-name">Kitchen & Bath Gallery</div>
+                    <div class="account-name">Canaroma Bath & Tile</div>
                     <div class="account-revenue">$287K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">GTA Bath Centre</div>
-                    <div class="account-revenue">$198K</div>
+                    <div class="account-name">Taps Wholesale Toronto</div>
+                    <div class="account-revenue">$254K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Ottawa Bath Design</div>
+                    <div class="account-name">Bath Emporium</div>
+                    <div class="account-revenue">$242K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">Tiles Plus / Cesario</div>
+                    <div class="account-revenue">$207K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">London Bath Centre</div>
                     <div class="account-revenue">$156K</div>
-                </div>
-                <div class="account-item">
-                    <div class="account-name">Hamilton K&B</div>
-                    <div class="account-revenue">$123K</div>
                 </div>
             </div>
         </div>
 
         <div class="top-accounts-card">
             <div class="agency-header">
-                <h3>The Shae Group <span class="positive">(Growing +3%)</span></h3>
+                <h3>ADream Decor <span class="territory">(TX/LA/OK)</span></h3>
                 <div class="agency-stats">
                     <div class="agency-stat">
-                        <div class="agency-stat-value">$77K</div>
-                        <div class="agency-stat-label">Avg Top 25 Account</div>
+                        <div class="agency-stat-value">$2.0M</div>
+                        <div class="agency-stat-label">2024+2025 Revenue</div>
+                    </div>
+                    <div class="agency-stat">
+                        <div class="agency-stat-value negative">-6%</div>
+                        <div class="agency-stat-label">YoY Change</div>
+                    </div>
+                </div>
+            </div>
+            <div class="account-list">
+                <div class="account-item">
+                    <div class="account-name">Hollywood Builders Hardware</div>
+                    <div class="account-revenue">$178K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">Ferguson Euless</div>
+                    <div class="account-revenue">$150K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">Baths of America</div>
+                    <div class="account-revenue">$131K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">Jarrell Company Dallas</div>
+                    <div class="account-revenue">$128K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">Reece Bath+Kitchen Dallas</div>
+                    <div class="account-revenue">$82K</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-accounts-card">
+            <div class="agency-header">
+                <h3>The Shae Group <span class="territory">(IL/WI/MN)</span> <span class="positive">Growing +3%</span></h3>
+                <div class="agency-stats">
+                    <div class="agency-stat">
+                        <div class="agency-stat-value">$2.1M</div>
+                        <div class="agency-stat-label">2024+2025 Revenue</div>
                     </div>
                     <div class="agency-stat">
                         <div class="agency-stat-value positive">+3%</div>
@@ -973,23 +921,23 @@
             </div>
             <div class="account-list">
                 <div class="account-item">
-                    <div class="account-name">Texas Bath Gallery</div>
-                    <div class="account-revenue">$298K</div>
+                    <div class="account-name">Studio 41 Highland Park</div>
+                    <div class="account-revenue">$456K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Houston K&B Center</div>
+                    <div class="account-name">Crawford Supply</div>
                     <div class="account-revenue">$234K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Dallas Design Showroom</div>
+                    <div class="account-name">Kitchen & Bath Classics</div>
                     <div class="account-revenue">$187K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Austin Bath Studio</div>
+                    <div class="account-name">Flour City Fixtures</div>
                     <div class="account-revenue">$156K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">San Antonio Plumbing</div>
+                    <div class="account-name">Allied Building Products</div>
                     <div class="account-revenue">$134K</div>
                 </div>
             </div>
@@ -997,11 +945,11 @@
 
         <div class="top-accounts-card">
             <div class="agency-header">
-                <h3>Summit Architectural Resource <span class="positive">(Growing +9%)</span></h3>
+                <h3>Summit Architectural <span class="territory">(CO/NM)</span> <span class="positive">Growing +9%</span></h3>
                 <div class="agency-stats">
                     <div class="agency-stat">
-                        <div class="agency-stat-value">$63K</div>
-                        <div class="agency-stat-label">Avg Top 25 Account</div>
+                        <div class="agency-stat-value">$1.2M</div>
+                        <div class="agency-stat-label">2024+2025 Revenue</div>
                     </div>
                     <div class="agency-stat">
                         <div class="agency-stat-value positive">+9%</div>
@@ -1011,24 +959,24 @@
             </div>
             <div class="account-list">
                 <div class="account-item">
-                    <div class="account-name">Florida Bath Design</div>
+                    <div class="account-name">Colorado K&B Design</div>
+                    <div class="account-revenue">$234K</div>
+                </div>
+                <div class="account-item">
+                    <div class="account-name">Denver Bath Gallery</div>
                     <div class="account-revenue">$187K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Miami Luxury Bath</div>
-                    <div class="account-revenue">$156K</div>
+                    <div class="account-name">Mountain Home Supply</div>
+                    <div class="account-revenue">$145K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Tampa K&B Gallery</div>
-                    <div class="account-revenue">$123K</div>
+                    <div class="account-name">Boulder Bath Center</div>
+                    <div class="account-revenue">$112K</div>
                 </div>
                 <div class="account-item">
-                    <div class="account-name">Orlando Bath Center</div>
+                    <div class="account-name">Albuquerque Design</div>
                     <div class="account-revenue">$98K</div>
-                </div>
-                <div class="account-item">
-                    <div class="account-name">Jacksonville Design</div>
-                    <div class="account-revenue">$87K</div>
                 </div>
             </div>
         </div>
@@ -1040,15 +988,15 @@
     </footer>
 
     <script>
-        // Agency Comparison Chart
+        // Agency Comparison Chart - Top 12
         const agencyLabels = [
-            'Phoenix S G', 'Alpha Sales', 'Premier Decorative', 'BU Ontario',
-            'ClearWater', 'The Shae Group', 'Crossroads', 'KLM Sales',
-            'BU Alberta/BC', 'Summit Arch'
+            'Phoenix SG', 'Alpha Sales', 'Premier', 'BU Ontario',
+            'Shae Group', 'DME Marketing', 'ADream Decor', 'ClearWater',
+            'Bridge Agency', 'VJS Marketing', 'Summit Arch', 'Personal Touch'
         ];
 
-        const data2024 = [2513, 1786, 1652, 1539, 1257, 1053, 987, 923, 876, 552];
-        const data2025 = [2034, 1734, 1507, 1173, 927, 1085, 834, 798, 724, 602];
+        const data2024 = [2507, 1793, 1651, 1535, 1052, 1069, 1053, 1259, 833, 804, 553, 616];
+        const data2025 = [2025, 1732, 1509, 1168, 1086, 943, 989, 929, 778, 711, 601, 530];
 
         new Chart(document.getElementById('agencyComparisonChart'), {
             type: 'bar',
@@ -1091,7 +1039,7 @@
                 scales: {
                     x: {
                         grid: { color: '#1e293b' },
-                        ticks: { color: '#94a3b8' }
+                        ticks: { color: '#94a3b8', maxRotation: 45 }
                     },
                     y: {
                         grid: { color: '#1e293b' },
@@ -1106,15 +1054,17 @@
             }
         });
 
-        // YoY Change Chart
+        // YoY Change Chart - All agencies
         const yoyLabels = [
-            'K&B Pro', 'Summit', 'Staar', 'Shae Group', 'Alpha',
-            'Premier', 'KLM', 'BU Quebec', 'Pacific NW', 'Tidewater',
-            'Crossroads', 'BU Alberta', 'Coastal', 'Mountain West', 'Gulf States',
-            'Phoenix', 'BU Ontario', 'ClearWater', 'Molloy'
+            'Summit +9%', 'BU Corp +8%', 'Shae +3%', 'Hawaii 0%',
+            'Alpha -3%', 'S&D -5%', 'ADream -6%', 'UT/WY -6%', 'Upstate -6%',
+            'Bridge -7%', 'Premier -9%', 'DME -12%', 'VJS -12%',
+            'Personal -14%', 'JDL -14%', 'Rain -18%', 'QC excl -18%',
+            'Phoenix -19%', 'Bridge GA -19%', 'Montreal -20%',
+            'Ontario -24%', 'ClearWater -26%', 'D\'Antoni -30%', 'Mexico -55%'
         ];
 
-        const yoyChanges = [11, 9, 7, 3, -3, -9, -14, -14, -14, -15, -16, -17, -17, -18, -18, -19, -24, -26, -33];
+        const yoyChanges = [9, 8, 3, 0, -3, -5, -6, -6, -6, -7, -9, -12, -12, -14, -14, -18, -18, -19, -19, -20, -24, -26, -30, -55];
 
         const yoyColors = yoyChanges.map(val => val >= 0 ? 'rgba(16, 185, 129, 0.8)' : 'rgba(239, 68, 68, 0.8)');
         const yoyBorders = yoyChanges.map(val => val >= 0 ? '#10b981' : '#ef4444');
@@ -1135,7 +1085,7 @@
                 indexAxis: 'y',
                 responsive: true,
                 maintainAspectRatio: true,
-                aspectRatio: 1.8,
+                aspectRatio: 1.5,
                 plugins: {
                     legend: { display: false },
                     tooltip: {
@@ -1159,7 +1109,7 @@
                     },
                     y: {
                         grid: { display: false },
-                        ticks: { color: '#94a3b8' }
+                        ticks: { color: '#94a3b8', font: { size: 10 } }
                     }
                 }
             }
@@ -1167,14 +1117,14 @@
 
         // 2025 Data Maintenance Score Chart
         const qualityAgencies = [
-            'Personal Touch (FL)', 'Bridge GA', 'S&D Lighting', 'Alpha Sales',
-            'Bridge Agency', 'BU Ontario', 'VJS Marketing', 'DME Marketing',
-            'ClearWater', 'Rain Company', 'Shae Group', 'ADream Decor',
-            'Summit Arch', 'Premier Decor', 'Phoenix SG', 'Greater MTL', 'QC excl MTL'
+            'Personal Touch', 'Bridge GA', 'S&D Lighting', 'Utah-WY', 'Hawaii', 'BU Corp',
+            'Alpha Sales', 'BU Ontario', 'VJS', 'DME', 'Bridge Agency',
+            'ClearWater', 'Rain Co', 'JDL', 'Shae Group', 'ADream', 'D\'Antoni',
+            'Summit', 'Premier', 'Phoenix', 'Upstate', 'QC excl', 'Montreal', 'Mexico'
         ];
 
         // Scores: % of accounts updated in 2025
-        const qualityScores = [100, 100, 100, 99, 99, 99, 99, 99, 98, 98, 97, 97, 96, 95, 93, 82, 84];
+        const qualityScores = [100, 100, 100, 100, 100, 100, 99, 99, 99, 99, 99, 98, 98, 98, 97, 97, 97, 96, 95, 93, 100, 84, 82, 50];
 
         const qualityColors = qualityScores.map(score => {
             if (score >= 97) return 'rgba(16, 185, 129, 0.8)';
@@ -1211,10 +1161,10 @@
                 scales: {
                     x: {
                         grid: { display: false },
-                        ticks: { color: '#94a3b8', maxRotation: 45 }
+                        ticks: { color: '#94a3b8', maxRotation: 45, font: { size: 9 } }
                     },
                     y: {
-                        min: 75,
+                        min: 40,
                         max: 100,
                         grid: { color: '#1e293b' },
                         ticks: {
