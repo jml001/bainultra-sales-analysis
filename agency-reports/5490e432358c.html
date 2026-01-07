@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-45%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Somerville Falls Church</td>
+                <td>$111,371</td>
+                <td>$61,035</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$53,553</td>
+                <td class="negative">-12%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Koval Building & Plumbing</td>
+                <td>$8,474</td>
+                <td>$33,032</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$44,120</td>
+                <td class="positive">+34%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">CMC Supply Roanoke</td>
+                <td>$44,329</td>
+                <td>$34,586</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$26,344</td>
+                <td class="negative">-24%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Somerville Chevy Chase</td>
+                <td>$65,476</td>
+                <td>$39,778</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$23,998</td>
+                <td class="negative">-40%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Somerville Owings Mills</td>
+                <td>$71,281</td>
+                <td>$38,410</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$20,133</td>
+                <td class="negative">-48%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Somerville Annapolis</td>
+                <td>$54,549</td>
+                <td>$48,269</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$19,076</td>
+                <td class="negative">-60%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">W T Weaver & Sons</td>
+                <td>$14,902</td>
+                <td>$9,500</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$15,117</td>
+                <td class="positive">+59%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Inspirations Bath Harrisburg</td>
+                <td>$14,601</td>
+                <td>$21,371</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$14,527</td>
+                <td class="negative">-32%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">May Supply Harrisonburg</td>
+                <td>$13,652</td>
+                <td>$12,175</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$13,435</td>
+                <td class="positive">+10%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Northeastern Supply Harrisonburg</td>
+                <td>$9,797</td>
+                <td>$17,246</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$12,182</td>
+                <td class="negative">-29%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Konst Union</td>
+                <td>$8,000</td>
+                <td>$11,488</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$9,500</td>
+                <td class="negative">-17%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Somerville Lancaster</td>
+                <td>$22,814</td>
+                <td>$18,825</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$5,676</td>
+                <td class="negative">-70%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

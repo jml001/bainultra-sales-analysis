@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-24%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Millers Elegant Hardware</td>
+                <td>$42,405</td>
+                <td>$43,728</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$58,125</td>
+                <td class="positive">+33%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">The Plumbing Gallery</td>
+                <td>$17,806</td>
+                <td>$43,924</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$55,678</td>
+                <td class="positive">+27%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Ferguson Enterprises Tamarac</td>
+                <td>$66,759</td>
+                <td>$110,212</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$55,015</td>
+                <td class="negative">-50%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Millenia Bath LLC</td>
+                <td>$27,645</td>
+                <td>$58,307</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$51,113</td>
+                <td class="negative">-12%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Decorator's Plumbing</td>
+                <td>$36,294</td>
+                <td>$41,000</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$40,354</td>
+                <td class="neutral">-2%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">The Plumbing Place Inc.</td>
+                <td>$42,605</td>
+                <td>$30,877</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$36,765</td>
+                <td class="positive">+19%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Ferguson Fort Myers</td>
+                <td>$35,668</td>
+                <td>$37,052</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$35,174</td>
+                <td class="negative">-5%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Wool Supply of Tampa</td>
+                <td>$20,000</td>
+                <td>$24,517</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$18,000</td>
+                <td class="negative">-27%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Tubs & More Supply</td>
+                <td>$18,000</td>
+                <td>$23,065</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$17,500</td>
+                <td class="negative">-24%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Naples Plumbing Studio</td>
+                <td>$17,350</td>
+                <td>$30,013</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$12,280</td>
+                <td class="negative">-59%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Sophisticated Hardware Fort Lauderdale</td>
+                <td>$15,101</td>
+                <td>$21,139</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$9,004</td>
+                <td class="negative">-57%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Cobblestone Court Inc.</td>
+                <td>$14,971</td>
+                <td>$29,286</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$7,209</td>
+                <td class="negative">-75%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

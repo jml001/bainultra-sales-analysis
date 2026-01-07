@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-35%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Studio 41 Highland Park</td>
+                <td>$599,520</td>
+                <td>$486,243</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$515,124</td>
+                <td class="positive">+6%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Banner Plumbing Supply</td>
+                <td>$49,834</td>
+                <td>$66,719</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$54,374</td>
+                <td class="negative">-19%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Gerhards - Dubuque</td>
+                <td>$48,938</td>
+                <td>$55,535</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$37,707</td>
+                <td class="negative">-32%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Gerhards - Madison</td>
+                <td>$34,082</td>
+                <td>$37,678</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$33,552</td>
+                <td class="negative">-11%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Allied Plumbing & Heating Supply</td>
+                <td>$24,637</td>
+                <td>$30,768</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$24,774</td>
+                <td class="negative">-19%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Gerhards - La Crosse</td>
+                <td>$53,605</td>
+                <td>$34,292</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$24,595</td>
+                <td class="negative">-28%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Traditional Floors & Design</td>
+                <td>$35,474</td>
+                <td>$26,345</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$23,076</td>
+                <td class="negative">-12%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">J & D Whirlpool and Bath Outlet</td>
+                <td>$25,000</td>
+                <td>$30,656</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$22,000</td>
+                <td class="negative">-28%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Bradley Interiors</td>
+                <td>$22,000</td>
+                <td>$26,561</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$18,500</td>
+                <td class="negative">-30%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Crawford Supply - Itasca</td>
+                <td>$52,882</td>
+                <td>$20,317</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$15,674</td>
+                <td class="negative">-23%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Holt Supply Bloomington</td>
+                <td>$18,000</td>
+                <td>$21,008</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$15,000</td>
+                <td class="negative">-29%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Gerhards - Milwaukee</td>
+                <td>$27,179</td>
+                <td>$45,111</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$14,930</td>
+                <td class="negative">-67%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

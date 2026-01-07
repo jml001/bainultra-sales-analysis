@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,99 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-44%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Plumbing Distributors Roswell</td>
+                <td>$22,140</td>
+                <td>$11,711</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$62,037</td>
+                <td class="positive">+430%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">City Plumbing Blairsville</td>
+                <td>$22,467</td>
+                <td>$91,960</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$25,564</td>
+                <td class="negative">-72%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Sandpiper Supply Inc.</td>
+                <td>$13,994</td>
+                <td>$21,443</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$16,995</td>
+                <td class="negative">-21%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">European Kitchen & BathWorks</td>
+                <td>$60,824</td>
+                <td>$55,763</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$13,845</td>
+                <td class="negative">-75%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Plumbing Distributors Atlanta</td>
+                <td>$16,384</td>
+                <td>$12,741</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$8,222</td>
+                <td class="negative">-35%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">W.A. Bragg Co. Evans</td>
+                <td>$18,874</td>
+                <td>$13,399</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$8,197</td>
+                <td class="negative">-39%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Southern Pipe Rome</td>
+                <td>$9,621</td>
+                <td>$15,284</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$6,959</td>
+                <td class="negative">-54%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

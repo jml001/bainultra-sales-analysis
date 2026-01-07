@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-42%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Advance Plumbing</td>
+                <td>$357,004</td>
+                <td>$292,771</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$255,992</td>
+                <td class="negative">-13%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Herald Wholesale</td>
+                <td>$283,740</td>
+                <td>$288,303</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$147,395</td>
+                <td class="negative">-49%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Nicklas Supply - Splash Inc.</td>
+                <td>$120,460</td>
+                <td>$75,722</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$79,267</td>
+                <td class="positive">+5%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Edelman Plumbing Supply</td>
+                <td>$137,497</td>
+                <td>$118,397</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$77,884</td>
+                <td class="negative">-34%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Keidel Supply Co.</td>
+                <td>$54,380</td>
+                <td>$30,956</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$48,964</td>
+                <td class="positive">+58%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Worly Plumbing Supply Columbus</td>
+                <td>$41,474</td>
+                <td>$42,557</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$29,551</td>
+                <td class="negative">-31%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Advance Plumbing - Detroit</td>
+                <td>$37,203</td>
+                <td>$50,036</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$27,309</td>
+                <td class="negative">-45%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Cleveland Plumbing Supply</td>
+                <td>$23,249</td>
+                <td>$47,188</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$27,134</td>
+                <td class="negative">-42%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Crescent Supply Darlington</td>
+                <td>$20,500</td>
+                <td>$31,317</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$21,137</td>
+                <td class="negative">-33%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">R. A. Townsend Company Saginaw</td>
+                <td>$24,050</td>
+                <td>$36,814</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$20,844</td>
+                <td class="negative">-43%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Bathworks - Plumbers & Factory</td>
+                <td>$41,602</td>
+                <td>$41,328</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$12,750</td>
+                <td class="negative">-69%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Carr Supply Columbus</td>
+                <td>$46,380</td>
+                <td>$51,372</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$11,354</td>
+                <td class="negative">-78%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

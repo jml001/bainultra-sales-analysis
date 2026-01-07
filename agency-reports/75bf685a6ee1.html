@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-44%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Western Nevada Supply Sparks</td>
+                <td>$136,991</td>
+                <td>$166,070</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$171,673</td>
+                <td class="positive">+3%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Faucets N' Fixtures Orange</td>
+                <td>$106,319</td>
+                <td>$161,820</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$116,709</td>
+                <td class="negative">-28%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Ferguson Sacramento</td>
+                <td>$62,124</td>
+                <td>$102,303</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$71,773</td>
+                <td class="negative">-30%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Central Arizona Supply - Mesa</td>
+                <td>$55,000</td>
+                <td>$83,237</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$68,500</td>
+                <td class="negative">-18%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Snyder Diamond Santa Monica</td>
+                <td>$73,627</td>
+                <td>$59,084</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$65,093</td>
+                <td class="positive">+10%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Sierra Plumbing Supply</td>
+                <td>$73,873</td>
+                <td>$73,096</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$63,654</td>
+                <td class="negative">-13%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Vic's Plumbing Supply</td>
+                <td>$73,457</td>
+                <td>$65,307</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$60,443</td>
+                <td class="negative">-7%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Reece Bath+Kitchen - Irvine</td>
+                <td>$45,000</td>
+                <td>$63,696</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$52,000</td>
+                <td class="negative">-18%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Jack London Kitchen & Bath - Oakland</td>
+                <td>$80,566</td>
+                <td>$84,916</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$46,801</td>
+                <td class="negative">-45%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Pirch Inc. - San Diego</td>
+                <td>$200,663</td>
+                <td>$69,324</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$42,000</td>
+                <td class="negative">-39%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Studio 41 Scottsdale</td>
+                <td>$54,827</td>
+                <td>$84,242</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$41,399</td>
+                <td class="negative">-51%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Splashworks Kitchen & Bath</td>
+                <td>$59,148</td>
+                <td>$57,350</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$25,286</td>
+                <td class="negative">-56%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

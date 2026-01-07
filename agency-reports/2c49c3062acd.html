@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-39%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Hollywood Builders Hardware</td>
+                <td>$81,792</td>
+                <td>$82,409</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$96,802</td>
+                <td class="positive">+17%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Baths of America</td>
+                <td>$62,835</td>
+                <td>$50,198</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$80,856</td>
+                <td class="positive">+61%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">The Jarrell Company - Dallas</td>
+                <td>$50,772</td>
+                <td>$65,903</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$67,626</td>
+                <td class="positive">+3%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Ferguson Enterprises Euless Br 61</td>
+                <td>$89,282</td>
+                <td>$93,916</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$65,509</td>
+                <td class="negative">-30%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Reece Bath+Kitchen - Dallas</td>
+                <td>$57,243</td>
+                <td>$30,341</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$54,165</td>
+                <td class="positive">+79%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Facets of Austin</td>
+                <td>$28,760</td>
+                <td>$34,716</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$45,751</td>
+                <td class="positive">+32%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Westside Kitchen & Bath</td>
+                <td>$36,736</td>
+                <td>$24,262</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$37,098</td>
+                <td class="positive">+53%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Acero Bella Inc.</td>
+                <td>$40,759</td>
+                <td>$30,114</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$29,524</td>
+                <td class="neutral">-2%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Rick's Hardware & Decorative Plumbing</td>
+                <td>$23,517</td>
+                <td>$39,243</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$20,874</td>
+                <td class="negative">-47%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Ferguson Enterprises Houston</td>
+                <td>$64,762</td>
+                <td>$45,934</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$19,513</td>
+                <td class="negative">-58%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Heatwave Supply - Tulsa</td>
+                <td>$45,716</td>
+                <td>$26,962</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$18,419</td>
+                <td class="negative">-32%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">JCR Distributors Dallas</td>
+                <td>$34,175</td>
+                <td>$41,227</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$14,584</td>
+                <td class="negative">-65%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

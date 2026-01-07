@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-28%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Cregger Company Bluffton</td>
+                <td>$96,800</td>
+                <td>$145,818</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$135,534</td>
+                <td class="negative">-7%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Wilkinson Supply Raleigh</td>
+                <td>$72,435</td>
+                <td>$71,199</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$80,217</td>
+                <td class="positive">+13%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Bird Hardware Wilmington</td>
+                <td>$25,455</td>
+                <td>$31,339</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$41,531</td>
+                <td class="positive">+33%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">V & W Supply Birmingham</td>
+                <td>$40,097</td>
+                <td>$53,296</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$29,559</td>
+                <td class="negative">-45%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Gateway Supply Greenville</td>
+                <td>$19,971</td>
+                <td>$35,198</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$27,398</td>
+                <td class="negative">-22%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Park Supply Huntsville</td>
+                <td>$64,723</td>
+                <td>$66,746</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$25,816</td>
+                <td class="negative">-61%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Bird Hardware Charleston</td>
+                <td>$29,435</td>
+                <td>$42,410</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$22,866</td>
+                <td class="negative">-46%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Beeson Hardware</td>
+                <td>$44,817</td>
+                <td>$35,299</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$19,067</td>
+                <td class="negative">-46%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Bella Hardware & Bath</td>
+                <td>$18,000</td>
+                <td>$23,587</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$19,000</td>
+                <td class="negative">-19%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Mississippi Coast Supply</td>
+                <td>$43,198</td>
+                <td>$26,404</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$18,886</td>
+                <td class="negative">-28%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Bird Hardware Charlotte</td>
+                <td>$17,047</td>
+                <td>$28,184</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$8,557</td>
+                <td class="negative">-70%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Wilkinson Supply Carrboro</td>
+                <td>$19,629</td>
+                <td>$29,251</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$7,107</td>
+                <td class="negative">-76%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

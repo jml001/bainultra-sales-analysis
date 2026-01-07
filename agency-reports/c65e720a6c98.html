@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-45%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Bath Emporium</td>
+                <td>$176,888</td>
+                <td>$113,545</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$131,946</td>
+                <td class="positive">+16%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Canaroma Bath & Tile</td>
+                <td>$188,305</td>
+                <td>$193,926</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$103,892</td>
+                <td class="negative">-46%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Taps Wholesale Bath Centre Toronto</td>
+                <td>$216,450</td>
+                <td>$162,627</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$102,113</td>
+                <td class="negative">-37%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Tiles Plus dba Cesario & CO.</td>
+                <td>$107,249</td>
+                <td>$139,914</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$83,558</td>
+                <td class="negative">-40%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Taps Wholesale Mississauga</td>
+                <td>$116,430</td>
+                <td>$70,583</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$73,991</td>
+                <td class="positive">+5%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">London Bath Centre</td>
+                <td>$85,715</td>
+                <td>$102,774</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$56,003</td>
+                <td class="negative">-46%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Amati Bath Center</td>
+                <td>$101,971</td>
+                <td>$45,852</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$54,297</td>
+                <td class="positive">+18%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Plumbing & Parts Home Centre</td>
+                <td>$85,407</td>
+                <td>$83,913</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$44,758</td>
+                <td class="negative">-47%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Ginger's International Bath Center</td>
+                <td>$115,679</td>
+                <td>$57,675</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$39,186</td>
+                <td class="negative">-32%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Glenbriar Home Hardware</td>
+                <td>$66,562</td>
+                <td>$33,160</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$33,036</td>
+                <td class="neutral">-0%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Plumbing Centre Hamilton</td>
+                <td>$70,505</td>
+                <td>$77,957</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$32,044</td>
+                <td class="negative">-59%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Penmar Plumbing / Mist Bath</td>
+                <td>$43,239</td>
+                <td>$50,511</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$29,007</td>
+                <td class="negative">-43%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

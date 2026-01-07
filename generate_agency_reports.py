@@ -38,6 +38,262 @@ TERRITORIES = {
     "Hawaii": "HI"
 }
 
+# Account-level data: 10-year avg, 2024, 2025
+ACCOUNT_DATA = {
+    "ADream Decor": {
+        "Ferguson Enterprises Euless Br 61": {"ten_year_avg": 89282, "rev_2024": 93916, "rev_2025": 65509},
+        "Hollywood Builders Hardware": {"ten_year_avg": 81792, "rev_2024": 82409, "rev_2025": 96802},
+        "Ferguson Enterprises Houston": {"ten_year_avg": 64762, "rev_2024": 45934, "rev_2025": 19513},
+        "Baths of America": {"ten_year_avg": 62835, "rev_2024": 50198, "rev_2025": 80856},
+        "Reece Bath+Kitchen - Dallas": {"ten_year_avg": 57243, "rev_2024": 30341, "rev_2025": 54165},
+        "The Jarrell Company - Dallas": {"ten_year_avg": 50772, "rev_2024": 65903, "rev_2025": 67626},
+        "Heatwave Supply - Tulsa": {"ten_year_avg": 45716, "rev_2024": 26962, "rev_2025": 18419},
+        "Acero Bella Inc.": {"ten_year_avg": 40759, "rev_2024": 30114, "rev_2025": 29524},
+        "Facets of Austin": {"ten_year_avg": 28760, "rev_2024": 34716, "rev_2025": 45751},
+        "Westside Kitchen & Bath": {"ten_year_avg": 36736, "rev_2024": 24262, "rev_2025": 37098},
+        "JCR Distributors Dallas": {"ten_year_avg": 34175, "rev_2024": 41227, "rev_2025": 14584},
+        "Rick's Hardware & Decorative Plumbing": {"ten_year_avg": 23517, "rev_2024": 39243, "rev_2025": 20874},
+    },
+    "Alpha Sales": {
+        "The Portland Group Billerica": {"ten_year_avg": 279543, "rev_2024": 154645, "rev_2025": 211158},
+        "Torrco - Waterbury": {"ten_year_avg": 153735, "rev_2024": 187660, "rev_2025": 165179},
+        "Sink & Spout - Manchester (NH)": {"ten_year_avg": 150731, "rev_2024": 189666, "rev_2025": 71110},
+        "Waterware Showrooms of Hartford": {"ten_year_avg": 86385, "rev_2024": 134073, "rev_2025": 104814},
+        "White's Plumbing Supplies": {"ten_year_avg": 112122, "rev_2024": 102725, "rev_2025": 102713},
+        "Supply New England SO. Uxbridge": {"ten_year_avg": 91244, "rev_2024": 91922, "rev_2025": 85484},
+        "Republic Plumbing Supply Norwood": {"ten_year_avg": 114424, "rev_2024": 80909, "rev_2025": 98327},
+        "The Ultimate Bath Store Worcester": {"ten_year_avg": 54500, "rev_2024": 70409, "rev_2025": 49850},
+        "Modern Plumbing Supply New Milford": {"ten_year_avg": 74806, "rev_2024": 70039, "rev_2025": 81581},
+        "Sink & Spout - Lowell": {"ten_year_avg": 54697, "rev_2024": 58512, "rev_2025": 48009},
+        "Sink & Spout - Concord": {"ten_year_avg": 48210, "rev_2024": 50108, "rev_2025": 65879},
+        "Supply New England Warwick": {"ten_year_avg": 49416, "rev_2024": 47074, "rev_2025": 45395},
+    },
+    "BU Agent - Ontario": {
+        "Canaroma Bath & Tile": {"ten_year_avg": 188305, "rev_2024": 193926, "rev_2025": 103892},
+        "Taps Wholesale Bath Centre Toronto": {"ten_year_avg": 216450, "rev_2024": 162627, "rev_2025": 102113},
+        "Tiles Plus dba Cesario & CO.": {"ten_year_avg": 107249, "rev_2024": 139914, "rev_2025": 83558},
+        "Bath Emporium": {"ten_year_avg": 176888, "rev_2024": 113545, "rev_2025": 131946},
+        "London Bath Centre": {"ten_year_avg": 85715, "rev_2024": 102774, "rev_2025": 56003},
+        "Plumbing & Parts Home Centre": {"ten_year_avg": 85407, "rev_2024": 83913, "rev_2025": 44758},
+        "Plumbing Centre Hamilton": {"ten_year_avg": 70505, "rev_2024": 77957, "rev_2025": 32044},
+        "Taps Wholesale Mississauga": {"ten_year_avg": 116430, "rev_2024": 70583, "rev_2025": 73991},
+        "Ginger's International Bath Center": {"ten_year_avg": 115679, "rev_2024": 57675, "rev_2025": 39186},
+        "Penmar Plumbing / Mist Bath": {"ten_year_avg": 43239, "rev_2024": 50511, "rev_2025": 29007},
+        "Amati Bath Center": {"ten_year_avg": 101971, "rev_2024": 45852, "rev_2025": 54297},
+        "Glenbriar Home Hardware": {"ten_year_avg": 66562, "rev_2024": 33160, "rev_2025": 33036},
+    },
+    "ClearWater Sales LLC": {
+        "Advance Plumbing": {"ten_year_avg": 357004, "rev_2024": 292771, "rev_2025": 255992},
+        "Herald Wholesale": {"ten_year_avg": 283740, "rev_2024": 288303, "rev_2025": 147395},
+        "Edelman Plumbing Supply": {"ten_year_avg": 137497, "rev_2024": 118397, "rev_2025": 77884},
+        "Nicklas Supply - Splash Inc.": {"ten_year_avg": 120460, "rev_2024": 75722, "rev_2025": 79267},
+        "Carr Supply Columbus": {"ten_year_avg": 46380, "rev_2024": 51372, "rev_2025": 11354},
+        "Advance Plumbing - Detroit": {"ten_year_avg": 37203, "rev_2024": 50036, "rev_2025": 27309},
+        "Cleveland Plumbing Supply": {"ten_year_avg": 23249, "rev_2024": 47188, "rev_2025": 27134},
+        "Worly Plumbing Supply Columbus": {"ten_year_avg": 41474, "rev_2024": 42557, "rev_2025": 29551},
+        "Bathworks - Plumbers & Factory": {"ten_year_avg": 41602, "rev_2024": 41328, "rev_2025": 12750},
+        "R. A. Townsend Company Saginaw": {"ten_year_avg": 24050, "rev_2024": 36814, "rev_2025": 20844},
+        "Crescent Supply Darlington": {"ten_year_avg": 20500, "rev_2024": 31317, "rev_2025": 21137},
+        "Keidel Supply Co.": {"ten_year_avg": 54380, "rev_2024": 30956, "rev_2025": 48964},
+    },
+    "Phoenix S G, LLC": {
+        "Home and Stone / Quality Bath": {"ten_year_avg": 462926, "rev_2024": 513066, "rev_2025": 470369},
+        "Hardware Designs Inc.": {"ten_year_avg": 270361, "rev_2024": 263311, "rev_2025": 271639},
+        "Ferguson Bayport": {"ten_year_avg": 535474, "rev_2024": 200227, "rev_2025": 148206},
+        "Decor Planet - Brooklyn": {"ten_year_avg": 255557, "rev_2024": 186131, "rev_2025": 71571},
+        "Fancy Fixtures Plainview": {"ten_year_avg": 92599, "rev_2024": 154972, "rev_2025": 98700},
+        "Best Plumbing Tile & Stone - Somers": {"ten_year_avg": 129721, "rev_2024": 149917, "rev_2025": 179781},
+        "AF Supply New York": {"ten_year_avg": 82464, "rev_2024": 146520, "rev_2025": 116689},
+        "Ferguson Enterprises Secaucus": {"ten_year_avg": 170457, "rev_2024": 124465, "rev_2025": 45427},
+        "Icon Knobs LLC": {"ten_year_avg": 45000, "rev_2024": 80372, "rev_2025": 65200},
+        "Kurrent LLC": {"ten_year_avg": 35000, "rev_2024": 64082, "rev_2025": 52000},
+        "Waterways Decor Inc.": {"ten_year_avg": 40000, "rev_2024": 62250, "rev_2025": 48500},
+        "C & L Plumbing Supply": {"ten_year_avg": 92252, "rev_2024": 59861, "rev_2025": 48696},
+    },
+    "Premier Decorative Group": {
+        "Western Nevada Supply Sparks": {"ten_year_avg": 136991, "rev_2024": 166070, "rev_2025": 171673},
+        "Faucets N' Fixtures Orange": {"ten_year_avg": 106319, "rev_2024": 161820, "rev_2025": 116709},
+        "Ferguson Sacramento": {"ten_year_avg": 62124, "rev_2024": 102303, "rev_2025": 71773},
+        "Jack London Kitchen & Bath - Oakland": {"ten_year_avg": 80566, "rev_2024": 84916, "rev_2025": 46801},
+        "Studio 41 Scottsdale": {"ten_year_avg": 54827, "rev_2024": 84242, "rev_2025": 41399},
+        "Central Arizona Supply - Mesa": {"ten_year_avg": 55000, "rev_2024": 83237, "rev_2025": 68500},
+        "Sierra Plumbing Supply": {"ten_year_avg": 73873, "rev_2024": 73096, "rev_2025": 63654},
+        "Pirch Inc. - San Diego": {"ten_year_avg": 200663, "rev_2024": 69324, "rev_2025": 42000},
+        "Vic's Plumbing Supply": {"ten_year_avg": 73457, "rev_2024": 65307, "rev_2025": 60443},
+        "Reece Bath+Kitchen - Irvine": {"ten_year_avg": 45000, "rev_2024": 63696, "rev_2025": 52000},
+        "Snyder Diamond Santa Monica": {"ten_year_avg": 73627, "rev_2024": 59084, "rev_2025": 65093},
+        "Splashworks Kitchen & Bath": {"ten_year_avg": 59148, "rev_2024": 57350, "rev_2025": 25286},
+    },
+    "The Shae Group": {
+        "Studio 41 Highland Park": {"ten_year_avg": 599520, "rev_2024": 486243, "rev_2025": 515124},
+        "Banner Plumbing Supply": {"ten_year_avg": 49834, "rev_2024": 66719, "rev_2025": 54374},
+        "Gerhards - Dubuque": {"ten_year_avg": 48938, "rev_2024": 55535, "rev_2025": 37707},
+        "Gerhards - Milwaukee": {"ten_year_avg": 27179, "rev_2024": 45111, "rev_2025": 14930},
+        "Gerhards - Madison": {"ten_year_avg": 34082, "rev_2024": 37678, "rev_2025": 33552},
+        "Gerhards - La Crosse": {"ten_year_avg": 53605, "rev_2024": 34292, "rev_2025": 24595},
+        "Allied Plumbing & Heating Supply": {"ten_year_avg": 24637, "rev_2024": 30768, "rev_2025": 24774},
+        "J & D Whirlpool and Bath Outlet": {"ten_year_avg": 25000, "rev_2024": 30656, "rev_2025": 22000},
+        "Bradley Interiors": {"ten_year_avg": 22000, "rev_2024": 26561, "rev_2025": 18500},
+        "Traditional Floors & Design": {"ten_year_avg": 35474, "rev_2024": 26345, "rev_2025": 23076},
+        "Holt Supply Bloomington": {"ten_year_avg": 18000, "rev_2024": 21008, "rev_2025": 15000},
+        "Crawford Supply - Itasca": {"ten_year_avg": 52882, "rev_2024": 20317, "rev_2025": 15674},
+    },
+    "DME Marketing": {
+        "B.A. Robinson Calgary": {"ten_year_avg": 229084, "rev_2024": 197619, "rev_2025": 166609},
+        "B.A. Robinson Edmonton": {"ten_year_avg": 131853, "rev_2024": 105993, "rev_2025": 71289},
+        "Cantu Bathrooms Vancouver": {"ten_year_avg": 144920, "rev_2024": 94494, "rev_2025": 77182},
+        "B.A. Robinson Winnipeg": {"ten_year_avg": 166316, "rev_2024": 83324, "rev_2025": 88947},
+        "Robinson Supply Burnaby": {"ten_year_avg": 149570, "rev_2024": 70768, "rev_2025": 44597},
+        "Studio by Wolseley Calgary": {"ten_year_avg": 120020, "rev_2024": 58968, "rev_2025": 49624},
+        "Emco / Ensuite Vancouver": {"ten_year_avg": 35000, "rev_2024": 41425, "rev_2025": 32000},
+        "Royal Flush Kitchen & Bath": {"ten_year_avg": 30000, "rev_2024": 40759, "rev_2025": 28500},
+        "Best Plumbing Edmonton": {"ten_year_avg": 28000, "rev_2024": 36830, "rev_2025": 25000},
+        "Wolseley Plumbing Surrey": {"ten_year_avg": 49095, "rev_2024": 34101, "rev_2025": 11212},
+        "Aquifer Distribution Saskatoon": {"ten_year_avg": 25000, "rev_2024": 33581, "rev_2025": 22000},
+        "Kitchen & Bath Classics Edmonton": {"ten_year_avg": 76950, "rev_2024": 32597, "rev_2025": 30146},
+    },
+    "VJS Marketing": {
+        "Kitchens & Baths by Briggs - Omaha": {"ten_year_avg": 150000, "rev_2024": 202199, "rev_2025": 165000},
+        "Atlas - Immerse": {"ten_year_avg": 120000, "rev_2024": 190293, "rev_2025": 155000},
+        "Crescent Plumbing Supply": {"ten_year_avg": 85000, "rev_2024": 105534, "rev_2025": 88000},
+        "Kitchens & Baths by Briggs - Lenexa": {"ten_year_avg": 60000, "rev_2024": 75514, "rev_2025": 62000},
+        "Harry Cooper Supply - Branson": {"ten_year_avg": 35000, "rev_2024": 43560, "rev_2025": 36000},
+        "Plumb Supply Spirit Lake": {"ten_year_avg": 22000, "rev_2024": 28800, "rev_2025": 23000},
+        "Briggs Inc. Lincoln": {"ten_year_avg": 24000, "rev_2024": 28692, "rev_2025": 22500},
+        "Phoenix Supply Wichita": {"ten_year_avg": 20000, "rev_2024": 24648, "rev_2025": 20000},
+        "Harry Cooper Supply Springfield": {"ten_year_avg": 18000, "rev_2024": 21595, "rev_2025": 18000},
+        "Briggs Inc. Grand Island": {"ten_year_avg": 15000, "rev_2024": 18444, "rev_2025": 15000},
+        "Briggs Sioux City": {"ten_year_avg": 12000, "rev_2024": 14223, "rev_2025": 11500},
+        "Western Supply Hutchinson": {"ten_year_avg": 11000, "rev_2024": 13092, "rev_2025": 10500},
+    },
+    "The Bridge Agency": {
+        "Cregger Company Bluffton": {"ten_year_avg": 96800, "rev_2024": 145818, "rev_2025": 135534},
+        "Wilkinson Supply Raleigh": {"ten_year_avg": 72435, "rev_2024": 71199, "rev_2025": 80217},
+        "Park Supply Huntsville": {"ten_year_avg": 64723, "rev_2024": 66746, "rev_2025": 25816},
+        "V & W Supply Birmingham": {"ten_year_avg": 40097, "rev_2024": 53296, "rev_2025": 29559},
+        "Bird Hardware Charleston": {"ten_year_avg": 29435, "rev_2024": 42410, "rev_2025": 22866},
+        "Beeson Hardware": {"ten_year_avg": 44817, "rev_2024": 35299, "rev_2025": 19067},
+        "Gateway Supply Greenville": {"ten_year_avg": 19971, "rev_2024": 35198, "rev_2025": 27398},
+        "Bird Hardware Wilmington": {"ten_year_avg": 25455, "rev_2024": 31339, "rev_2025": 41531},
+        "Wilkinson Supply Carrboro": {"ten_year_avg": 19629, "rev_2024": 29251, "rev_2025": 7107},
+        "Bird Hardware Charlotte": {"ten_year_avg": 17047, "rev_2024": 28184, "rev_2025": 8557},
+        "Mississippi Coast Supply": {"ten_year_avg": 43198, "rev_2024": 26404, "rev_2025": 18886},
+        "Bella Hardware & Bath": {"ten_year_avg": 18000, "rev_2024": 23587, "rev_2025": 19000},
+    },
+    "Personal Touch Sales": {
+        "Ferguson Enterprises Tamarac": {"ten_year_avg": 66759, "rev_2024": 110212, "rev_2025": 55015},
+        "Millenia Bath LLC": {"ten_year_avg": 27645, "rev_2024": 58307, "rev_2025": 51113},
+        "The Plumbing Gallery": {"ten_year_avg": 17806, "rev_2024": 43924, "rev_2025": 55678},
+        "Millers Elegant Hardware": {"ten_year_avg": 42405, "rev_2024": 43728, "rev_2025": 58125},
+        "Decorator's Plumbing": {"ten_year_avg": 36294, "rev_2024": 41000, "rev_2025": 40354},
+        "Ferguson Fort Myers": {"ten_year_avg": 35668, "rev_2024": 37052, "rev_2025": 35174},
+        "The Plumbing Place Inc.": {"ten_year_avg": 42605, "rev_2024": 30877, "rev_2025": 36765},
+        "Naples Plumbing Studio": {"ten_year_avg": 17350, "rev_2024": 30013, "rev_2025": 12280},
+        "Cobblestone Court Inc.": {"ten_year_avg": 14971, "rev_2024": 29286, "rev_2025": 7209},
+        "Wool Supply of Tampa": {"ten_year_avg": 20000, "rev_2024": 24517, "rev_2025": 18000},
+        "Tubs & More Supply": {"ten_year_avg": 18000, "rev_2024": 23065, "rev_2025": 17500},
+        "Sophisticated Hardware Fort Lauderdale": {"ten_year_avg": 15101, "rev_2024": 21139, "rev_2025": 9004},
+    },
+    "Summit Architectural Resource": {
+        "Rampart Plumbing Denver": {"ten_year_avg": 161596, "rev_2024": 170200, "rev_2025": 169532},
+        "Ultra Design Center": {"ten_year_avg": 164905, "rev_2024": 120812, "rev_2025": 126041},
+        "Dahl of Avon": {"ten_year_avg": 57373, "rev_2024": 49349, "rev_2025": 80554},
+        "Ferguson Steamboat Springs": {"ten_year_avg": 48653, "rev_2024": 47730, "rev_2025": 14736},
+        "Dahl Decorative Kitchen & Bath": {"ten_year_avg": 37524, "rev_2024": 44940, "rev_2025": 42851},
+        "Rampart Colorado Springs": {"ten_year_avg": 46850, "rev_2024": 26477, "rev_2025": 44362},
+        "Confluence Kitchen & Bath": {"ten_year_avg": 9423, "rev_2024": 21886, "rev_2025": 39127},
+        "Colorado Design Center": {"ten_year_avg": 15000, "rev_2024": 20788, "rev_2025": 18000},
+        "Santa Fe By Design": {"ten_year_avg": 16196, "rev_2024": 19586, "rev_2025": 12000},
+        "Dahl Decorative Montrose": {"ten_year_avg": 19617, "rev_2024": 16443, "rev_2025": 19829},
+        "Solutions Bath & Kitchen": {"ten_year_avg": 22335, "rev_2024": 16136, "rev_2025": 12799},
+        "Christopher's Kitchen & Bath": {"ten_year_avg": 21789, "rev_2024": 11079, "rev_2025": 11634},
+    },
+    "JDL Associates": {
+        "Somerville Falls Church": {"ten_year_avg": 111371, "rev_2024": 61035, "rev_2025": 53553},
+        "Somerville Annapolis": {"ten_year_avg": 54549, "rev_2024": 48269, "rev_2025": 19076},
+        "Somerville Chevy Chase": {"ten_year_avg": 65476, "rev_2024": 39778, "rev_2025": 23998},
+        "Somerville Owings Mills": {"ten_year_avg": 71281, "rev_2024": 38410, "rev_2025": 20133},
+        "CMC Supply Roanoke": {"ten_year_avg": 44329, "rev_2024": 34586, "rev_2025": 26344},
+        "Koval Building & Plumbing": {"ten_year_avg": 8474, "rev_2024": 33032, "rev_2025": 44120},
+        "Inspirations Bath Harrisburg": {"ten_year_avg": 14601, "rev_2024": 21371, "rev_2025": 14527},
+        "Somerville Lancaster": {"ten_year_avg": 22814, "rev_2024": 18825, "rev_2025": 5676},
+        "Northeastern Supply Harrisonburg": {"ten_year_avg": 9797, "rev_2024": 17246, "rev_2025": 12182},
+        "May Supply Harrisonburg": {"ten_year_avg": 13652, "rev_2024": 12175, "rev_2025": 13435},
+        "Konst Union": {"ten_year_avg": 8000, "rev_2024": 11488, "rev_2025": 9500},
+        "W T Weaver & Sons": {"ten_year_avg": 14902, "rev_2024": 9500, "rev_2025": 15117},
+    },
+    "Greater Montreal": {
+        "Deschenes et Fils": {"ten_year_avg": 94646, "rev_2024": 153152, "rev_2025": 66885},
+        "Batimat div. d'Emco": {"ten_year_avg": 83630, "rev_2024": 53736, "rev_2025": 86885},
+        "Ciot Montreal Inc.": {"ten_year_avg": 54529, "rev_2024": 36161, "rev_2025": 25809},
+        "Vague & Vogue Pierrefonds": {"ten_year_avg": 26071, "rev_2024": 22577, "rev_2025": 21452},
+        "Centre de Plomberie Jean Lepine": {"ten_year_avg": 18137, "rev_2024": 22361, "rev_2025": 15163},
+        "Espace Plomberie Duo": {"ten_year_avg": 12000, "rev_2024": 16770, "rev_2025": 14000},
+        "Plomberie G. Letourneau": {"ten_year_avg": 32605, "rev_2024": 14463, "rev_2025": 11990},
+        "La Boutique de plomberie": {"ten_year_avg": 8930, "rev_2024": 13897, "rev_2025": 10000},
+        "Vague & Vogue Laval": {"ten_year_avg": 10000, "rev_2024": 12184, "rev_2025": 9500},
+        "Plomberie Richard Tetrault": {"ten_year_avg": 14815, "rev_2024": 12023, "rev_2025": 30869},
+        "Plomberie Ravary": {"ten_year_avg": 17307, "rev_2024": 11750, "rev_2025": 21343},
+    },
+    "D'Antoni Sales Group": {
+        "Economy Plumbing Supply": {"ten_year_avg": 36856, "rev_2024": 33741, "rev_2025": 31287},
+        "Hardwood Specialties Inc.": {"ten_year_avg": 14865, "rev_2024": 29825, "rev_2025": 9530},
+        "Kenny & Company Nashville": {"ten_year_avg": 14448, "rev_2024": 27873, "rev_2025": 12000},
+        "Lee Supply Carmel": {"ten_year_avg": 22277, "rev_2024": 22772, "rev_2025": 42483},
+        "Willis Klein Louisville": {"ten_year_avg": 40119, "rev_2024": 21201, "rev_2025": 12357},
+        "Winsupply Owensboro": {"ten_year_avg": 11131, "rev_2024": 17363, "rev_2025": 5074},
+        "Hendersonville Winnelson": {"ten_year_avg": 7794, "rev_2024": 16087, "rev_2025": 17174},
+        "Waterplace Crown Point": {"ten_year_avg": 24711, "rev_2024": 14751, "rev_2025": 8876},
+        "Thomas Kitchen & Bath": {"ten_year_avg": 9686, "rev_2024": 10863, "rev_2025": 5672},
+    },
+    "The Bridge Agency GA": {
+        "City Plumbing Blairsville": {"ten_year_avg": 22467, "rev_2024": 91960, "rev_2025": 25564},
+        "European Kitchen & BathWorks": {"ten_year_avg": 60824, "rev_2024": 55763, "rev_2025": 13845},
+        "Sandpiper Supply Inc.": {"ten_year_avg": 13994, "rev_2024": 21443, "rev_2025": 16995},
+        "Southern Pipe Rome": {"ten_year_avg": 9621, "rev_2024": 15284, "rev_2025": 6959},
+        "W.A. Bragg Co. Evans": {"ten_year_avg": 18874, "rev_2024": 13399, "rev_2025": 8197},
+        "Plumbing Distributors Atlanta": {"ten_year_avg": 16384, "rev_2024": 12741, "rev_2025": 8222},
+        "Plumbing Distributors Roswell": {"ten_year_avg": 22140, "rev_2024": 11711, "rev_2025": 62037},
+    },
+    "The Rain Company": {
+        "Abbrio - Pacific Plumbing": {"ten_year_avg": 57429, "rev_2024": 66995, "rev_2025": 18340},
+        "Chown Hardware Portland": {"ten_year_avg": 69151, "rev_2024": 49307, "rev_2025": 31412},
+        "Chown Hardware Bellevue": {"ten_year_avg": 45603, "rev_2024": 43908, "rev_2025": 25277},
+    },
+    "S & D Lighting Group": {
+        "Eddy Group Halifax": {"ten_year_avg": 16696, "rev_2024": 28963, "rev_2025": 12719},
+        "Eddy Group Fredericton": {"ten_year_avg": 24387, "rev_2024": 22345, "rev_2025": 33581},
+        "Eddy Group Bathurst": {"ten_year_avg": 11205, "rev_2024": 18987, "rev_2025": 7110},
+    },
+    "Quebec excluding MTL (+ Ottawa Region)": {
+        "Maison et Compagnie": {"ten_year_avg": 9869, "rev_2024": 86238, "rev_2025": 12451},
+        "Emco Corporation": {"ten_year_avg": 31543, "rev_2024": 33192, "rev_2025": 29110},
+        "Vague & Vogue Quebec": {"ten_year_avg": 18000, "rev_2024": 22434, "rev_2025": 15000},
+        "Astro Design Center": {"ten_year_avg": 26457, "rev_2024": 20737, "rev_2025": 12000},
+    },
+    "Utah - Wyoming": {
+        "Chariot Wholesale": {"ten_year_avg": 25000, "rev_2024": 34531, "rev_2025": 28000},
+        "Wyoming Mechanical Co.": {"ten_year_avg": 20000, "rev_2024": 23515, "rev_2025": 19000},
+        "Ferguson Park City": {"ten_year_avg": 18000, "rev_2024": 14716, "rev_2025": 12000},
+    },
+    "Upstate NewYork": {
+        "VP Supply Cheektowaga": {"ten_year_avg": 15000, "rev_2024": 18880, "rev_2025": 14000},
+        "VP Supply Rochester": {"ten_year_avg": 12000, "rev_2024": 16283, "rev_2025": 11000},
+    },
+    "Hawaii": {
+        "Island Bath & Hardware": {"ten_year_avg": 5000, "rev_2024": 12849, "rev_2025": 15120},
+    },
+    "Mexico": {
+        "Interiosimo Corporativo": {"ten_year_avg": 5144, "rev_2024": 31604, "rev_2025": 14085},
+    },
+    "BainUltra Corporate": {
+        "VENT002": {"ten_year_avg": 206254, "rev_2024": 282737, "rev_2025": 281389},
+        "VENT001": {"ten_year_avg": 78126, "rev_2024": 97672, "rev_2025": 126757},
+        "Frisbees Inc.": {"ten_year_avg": 19924, "rev_2024": 31462, "rev_2025": 21834},
+        "Z Accounts": {"ten_year_avg": 40844, "rev_2024": 27668, "rev_2025": 42746},
+    },
+}
+
 # 10-year revenue data (from Salesforce query)
 AGENCY_YEARLY_DATA = {
     "ADream Decor": {
@@ -196,6 +452,57 @@ def format_currency(amount):
         return f"${amount/1000:.0f}K"
     else:
         return f"${amount:.0f}"
+
+def generate_account_rows(agency_name):
+    """Generate HTML table rows for account data"""
+    accounts = ACCOUNT_DATA.get(agency_name, {})
+    if not accounts:
+        return "<tr><td colspan='6' style='text-align: center; color: var(--text-muted);'>No account data available</td></tr>"
+
+    rows = []
+    # Sort by 2025 revenue descending
+    sorted_accounts = sorted(accounts.items(), key=lambda x: x[1].get("rev_2025", 0), reverse=True)
+
+    for acct_name, data in sorted_accounts:
+        avg = data.get("ten_year_avg", 0)
+        rev_2024 = data.get("rev_2024", 0)
+        rev_2025 = data.get("rev_2025", 0)
+
+        # Calculate YoY change
+        if rev_2024 > 0:
+            yoy = ((rev_2025 - rev_2024) / rev_2024) * 100
+        else:
+            yoy = 100 if rev_2025 > 0 else 0
+
+        # Determine status
+        if rev_2025 > rev_2024 * 1.1:
+            status = "Growing"
+            status_class = "status-growing"
+        elif rev_2025 < rev_2024 * 0.5:
+            status = "At Risk"
+            status_class = "status-at-risk"
+        elif rev_2025 < rev_2024 * 0.85:
+            status = "Declining"
+            status_class = "status-declining"
+        else:
+            status = "Stable"
+            status_class = "status-stable"
+
+        yoy_class = "positive" if yoy > 0 else "negative" if yoy < -5 else "neutral"
+        yoy_sign = "+" if yoy > 0 else ""
+
+        rows.append(f'''
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">{acct_name}</td>
+                <td>${avg:,.0f}</td>
+                <td>${rev_2024:,.0f}</td>
+                <td style="color: var(--text-primary); font-weight: 500;">${rev_2025:,.0f}</td>
+                <td class="{yoy_class}">{yoy_sign}{yoy:.0f}%</td>
+                <td class="{status_class}">{status}</td>
+            </tr>
+        ''')
+
+    return "\n".join(rows)
 
 def generate_html_report(agency_name, metrics, token):
     """Generate HTML report for an agency"""
@@ -379,6 +686,34 @@ def generate_html_report(agency_name, metrics, token):
             display: inline-block;
             margin-bottom: 1rem;
         }}
+        .account-table {{
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }}
+        .account-table th {{
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }}
+        .account-table td {{
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }}
+        .account-table tr:hover {{
+            background: var(--bg-card-hover);
+        }}
+        .status-growing {{ color: var(--accent-green); font-weight: 600; }}
+        .status-stable {{ color: var(--accent-yellow); }}
+        .status-declining {{ color: var(--accent-red); }}
+        .status-at-risk {{ color: #f97316; font-weight: 600; }}
     </style>
 </head>
 <body>
@@ -437,6 +772,30 @@ def generate_html_report(agency_name, metrics, token):
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">{((metrics["rev_2025"] - metrics["covid_peak"]) / metrics["covid_peak"] * 100) if metrics["covid_peak"] > 0 else 0:.0f}%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {generate_account_rows(agency_name)}
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -657,7 +1016,7 @@ def main():
 
     # Generate index page
     index_html = generate_index_page(agencies_data)
-    with open(output_dir / "_index.html", "w") as f:
+    with open(output_dir / "index.html", "w") as f:
         f.write(index_html)
 
     print(f"\nGenerated {len(agencies_data)} agency reports")

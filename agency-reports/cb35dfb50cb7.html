@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-32%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">The Portland Group Billerica</td>
+                <td>$279,543</td>
+                <td>$154,645</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$211,158</td>
+                <td class="positive">+37%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Torrco - Waterbury</td>
+                <td>$153,735</td>
+                <td>$187,660</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$165,179</td>
+                <td class="negative">-12%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Waterware Showrooms of Hartford</td>
+                <td>$86,385</td>
+                <td>$134,073</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$104,814</td>
+                <td class="negative">-22%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">White's Plumbing Supplies</td>
+                <td>$112,122</td>
+                <td>$102,725</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$102,713</td>
+                <td class="neutral">-0%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Republic Plumbing Supply Norwood</td>
+                <td>$114,424</td>
+                <td>$80,909</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$98,327</td>
+                <td class="positive">+22%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Supply New England SO. Uxbridge</td>
+                <td>$91,244</td>
+                <td>$91,922</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$85,484</td>
+                <td class="negative">-7%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Modern Plumbing Supply New Milford</td>
+                <td>$74,806</td>
+                <td>$70,039</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$81,581</td>
+                <td class="positive">+16%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Sink & Spout - Manchester (NH)</td>
+                <td>$150,731</td>
+                <td>$189,666</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$71,110</td>
+                <td class="negative">-63%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Sink & Spout - Concord</td>
+                <td>$48,210</td>
+                <td>$50,108</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$65,879</td>
+                <td class="positive">+31%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">The Ultimate Bath Store Worcester</td>
+                <td>$54,500</td>
+                <td>$70,409</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$49,850</td>
+                <td class="negative">-29%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Sink & Spout - Lowell</td>
+                <td>$54,697</td>
+                <td>$58,512</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$48,009</td>
+                <td class="negative">-18%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Supply New England Warwick</td>
+                <td>$49,416</td>
+                <td>$47,074</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$45,395</td>
+                <td class="neutral">-4%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

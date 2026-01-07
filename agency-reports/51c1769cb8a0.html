@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,139 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-33%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Batimat div. d'Emco</td>
+                <td>$83,630</td>
+                <td>$53,736</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$86,885</td>
+                <td class="positive">+62%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Deschenes et Fils</td>
+                <td>$94,646</td>
+                <td>$153,152</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$66,885</td>
+                <td class="negative">-56%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Plomberie Richard Tetrault</td>
+                <td>$14,815</td>
+                <td>$12,023</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$30,869</td>
+                <td class="positive">+157%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Ciot Montreal Inc.</td>
+                <td>$54,529</td>
+                <td>$36,161</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$25,809</td>
+                <td class="negative">-29%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Vague & Vogue Pierrefonds</td>
+                <td>$26,071</td>
+                <td>$22,577</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$21,452</td>
+                <td class="neutral">-5%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Plomberie Ravary</td>
+                <td>$17,307</td>
+                <td>$11,750</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$21,343</td>
+                <td class="positive">+82%</td>
+                <td class="status-growing">Growing</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Centre de Plomberie Jean Lepine</td>
+                <td>$18,137</td>
+                <td>$22,361</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$15,163</td>
+                <td class="negative">-32%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Espace Plomberie Duo</td>
+                <td>$12,000</td>
+                <td>$16,770</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$14,000</td>
+                <td class="negative">-17%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Plomberie G. Letourneau</td>
+                <td>$32,605</td>
+                <td>$14,463</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$11,990</td>
+                <td class="negative">-17%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">La Boutique de plomberie</td>
+                <td>$8,930</td>
+                <td>$13,897</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$10,000</td>
+                <td class="negative">-28%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Vague & Vogue Laval</td>
+                <td>$10,000</td>
+                <td>$12,184</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$9,500</td>
+                <td class="negative">-22%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 

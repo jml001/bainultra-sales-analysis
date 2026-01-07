@@ -160,6 +160,34 @@
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .account-table th {
+            background: rgba(59,130,246,0.1);
+            padding: 0.75rem;
+            text-align: right;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .account-table td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .account-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        .status-growing { color: var(--accent-green); font-weight: 600; }
+        .status-stable { color: var(--accent-yellow); }
+        .status-declining { color: var(--accent-red); }
+        .status-at-risk { color: #f97316; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -218,6 +246,149 @@
                     <div class="stat-label">Current vs Peak</div>
                     <div class="stat-value negative">-31%</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Account Performance Details</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+                Your top accounts with 10-year average, 2024, and 2025 performance. Use this to identify growth opportunities and at-risk accounts.
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="account-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Account</th>
+                            <th>10-Year Avg</th>
+                            <th>2024</th>
+                            <th>2025 YTD</th>
+                            <th>vs 2024</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">B.A. Robinson Calgary</td>
+                <td>$229,084</td>
+                <td>$197,619</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$166,609</td>
+                <td class="negative">-16%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">B.A. Robinson Winnipeg</td>
+                <td>$166,316</td>
+                <td>$83,324</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$88,947</td>
+                <td class="positive">+7%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Cantu Bathrooms Vancouver</td>
+                <td>$144,920</td>
+                <td>$94,494</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$77,182</td>
+                <td class="negative">-18%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">B.A. Robinson Edmonton</td>
+                <td>$131,853</td>
+                <td>$105,993</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$71,289</td>
+                <td class="negative">-33%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Studio by Wolseley Calgary</td>
+                <td>$120,020</td>
+                <td>$58,968</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$49,624</td>
+                <td class="negative">-16%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Robinson Supply Burnaby</td>
+                <td>$149,570</td>
+                <td>$70,768</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$44,597</td>
+                <td class="negative">-37%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Emco / Ensuite Vancouver</td>
+                <td>$35,000</td>
+                <td>$41,425</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$32,000</td>
+                <td class="negative">-23%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Kitchen & Bath Classics Edmonton</td>
+                <td>$76,950</td>
+                <td>$32,597</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$30,146</td>
+                <td class="negative">-8%</td>
+                <td class="status-stable">Stable</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Royal Flush Kitchen & Bath</td>
+                <td>$30,000</td>
+                <td>$40,759</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$28,500</td>
+                <td class="negative">-30%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Best Plumbing Edmonton</td>
+                <td>$28,000</td>
+                <td>$36,830</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$25,000</td>
+                <td class="negative">-32%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Aquifer Distribution Saskatoon</td>
+                <td>$25,000</td>
+                <td>$33,581</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$22,000</td>
+                <td class="negative">-34%</td>
+                <td class="status-declining">Declining</td>
+            </tr>
+        
+
+            <tr>
+                <td style="text-align: left; color: var(--text-primary);">Wolseley Plumbing Surrey</td>
+                <td>$49,095</td>
+                <td>$34,101</td>
+                <td style="color: var(--text-primary); font-weight: 500;">$11,212</td>
+                <td class="negative">-67%</td>
+                <td class="status-at-risk">At Risk</td>
+            </tr>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 
