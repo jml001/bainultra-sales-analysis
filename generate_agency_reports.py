@@ -728,9 +728,9 @@ def generate_html_report(agency_name, metrics, token):
 
         <div class="metrics-grid">
             <div class="metric-card">
-                <div class="metric-label">2025 YTD Revenue</div>
+                <div class="metric-label">2025 Revenue</div>
                 <div class="metric-value">{format_currency(metrics["rev_2025"])}</div>
-                <div class="metric-subtext">Through Dec 23, 2025</div>
+                <div class="metric-subtext">CY2025 (through Dec 23)</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">vs 2024</div>
@@ -787,7 +787,7 @@ def generate_html_report(agency_name, metrics, token):
                             <th style="text-align: left;">Account</th>
                             <th>10-Year Avg</th>
                             <th>2024</th>
-                            <th>2025 YTD</th>
+                            <th>2025</th>
                             <th>vs 2024</th>
                             <th>Status</th>
                         </tr>
