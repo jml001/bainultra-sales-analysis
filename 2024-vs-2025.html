@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BainUltra 2024 vs 2025 Sales Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a25;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero .date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .summary-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+        }
+
+        .summary-card .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .summary-card .change {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .positive { color: var(--accent-green); }
+        .negative { color: var(--accent-red); }
+        .neutral { color: var(--text-muted); }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section .section-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* Comparison Tables */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .comparison-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .comparison-card h3 {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .comparison-card.decline h3 {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+        }
+
+        .comparison-card table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-card th,
+        .comparison-card td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-card th {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .comparison-card tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-card tr:hover td {
+            background: var(--bg-card-hover);
+        }
+
+        .comparison-card .rank {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .growth .rank { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+        .decline .rank { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+
+        .change-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .change-badge.positive {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .change-badge.negative {
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .chart-wrapper {
+            height: 400px;
+            position: relative;
+        }
+
+        /* Full Width Table */
+        .full-table {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .full-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .full-table th,
+        .full-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .full-table th {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .full-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .full-table tr:hover td {
+            background: var(--bg-card-hover);
+        }
+
+        .full-table .text-right {
+            text-align: right;
+        }
+
+        /* Key Insight Box */
+        .insight-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .insight-box h3 {
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .insight-box p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .insight-box strong {
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <div class="container header-content">
+            <img src="logo.png" alt="BainUltra" class="logo">
+            <nav class="nav-links">
+                <a href="index.html">Full Analysis</a>
+                <a href="#markets">Markets</a>
+                <a href="#accounts">Accounts</a>
+                <a href="#insights">Insights</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>2024 vs 2025 Comparison</h1>
+                <p class="subtitle">Year-over-Year Performance Analysis for VP Sales</p>
+                <p class="date">Data through December 23, 2025 | ~$400K January sales missing from sync</p>
+            </div>
+        </section>
+
+        <!-- Summary Cards -->
+        <div class="container">
+            <div class="summary-grid">
+                <div class="summary-card animate delay-1">
+                    <div class="label">2024 Revenue</div>
+                    <div class="value">$17.05M</div>
+                    <div class="change neutral">Full Year</div>
+                </div>
+                <div class="summary-card animate delay-2">
+                    <div class="label">2025 Revenue (YTD)</div>
+                    <div class="value">$15.14M</div>
+                    <div class="change negative">-11.2% vs 2024</div>
+                </div>
+                <div class="summary-card animate delay-3">
+                    <div class="label">Markets Growing</div>
+                    <div class="value positive">6</div>
+                    <div class="change positive">CO, IL, CT, VA, NV, IN</div>
+                </div>
+                <div class="summary-card animate delay-4">
+                    <div class="label">Markets Declining</div>
+                    <div class="value negative">8</div>
+                    <div class="change negative">NY, ON, CA, MI, AZ, NJ, FL, TX</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Markets Section -->
+        <section id="markets">
+            <div class="container">
+                <h2>Market Performance</h2>
+                <p class="section-subtitle">Geographic revenue comparison between 2024 and 2025</p>
+
+                <div class="chart-container">
+                    <div class="chart-wrapper">
+                        <canvas id="marketsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card growth">
+                        <h3>
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-green)">
+                                <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                            </svg>
+                            Top Growth Markets
+                        </h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Market</th>
+                                    <th>2024</th>
+                                    <th>2025</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="rank">1</span></td>
+                                    <td><strong>Virginia</strong></td>
+                                    <td>$101K</td>
+                                    <td>$165K</td>
+                                    <td><span class="change-badge positive">+64%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">2</span></td>
+                                    <td><strong>Nevada</strong></td>
+                                    <td>$188K</td>
+                                    <td>$248K</td>
+                                    <td><span class="change-badge positive">+32%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">3</span></td>
+                                    <td><strong>Minnesota</strong></td>
+                                    <td>$112K</td>
+                                    <td>$138K</td>
+                                    <td><span class="change-badge positive">+23%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">4</span></td>
+                                    <td><strong>North Carolina</strong></td>
+                                    <td>$255K</td>
+                                    <td>$287K</td>
+                                    <td><span class="change-badge positive">+13%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">5</span></td>
+                                    <td><strong>Colorado</strong></td>
+                                    <td>$528K</td>
+                                    <td>$595K</td>
+                                    <td><span class="change-badge positive">+13%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">6</span></td>
+                                    <td><strong>Indiana</strong></td>
+                                    <td>$85K</td>
+                                    <td>$94K</td>
+                                    <td><span class="change-badge positive">+11%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="comparison-card decline">
+                        <h3>
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-red)">
+                                <path d="M17 7l-9.2 9.2M7 7v10h10"/>
+                            </svg>
+                            Top Declining Markets
+                        </h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Market</th>
+                                    <th>2024</th>
+                                    <th>2025</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="rank">1</span></td>
+                                    <td><strong>Arizona</strong></td>
+                                    <td>$300K</td>
+                                    <td>$157K</td>
+                                    <td><span class="change-badge negative">-48%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">2</span></td>
+                                    <td><strong>New Hampshire</strong></td>
+                                    <td>$305K</td>
+                                    <td>$184K</td>
+                                    <td><span class="change-badge negative">-40%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">3</span></td>
+                                    <td><strong>New Jersey</strong></td>
+                                    <td>$624K</td>
+                                    <td>$444K</td>
+                                    <td><span class="change-badge negative">-29%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">4</span></td>
+                                    <td><strong>Michigan</strong></td>
+                                    <td>$741K</td>
+                                    <td>$563K</td>
+                                    <td><span class="change-badge negative">-24%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">5</span></td>
+                                    <td><strong>Pennsylvania</strong></td>
+                                    <td>$260K</td>
+                                    <td>$200K</td>
+                                    <td><span class="change-badge negative">-23%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">6</span></td>
+                                    <td><strong>Ontario</strong></td>
+                                    <td>$1.58M</td>
+                                    <td>$1.24M</td>
+                                    <td><span class="change-badge negative">-22%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accounts Section -->
+        <section id="accounts">
+            <div class="container">
+                <h2>Account Performance</h2>
+                <p class="section-subtitle">Top dealers comparison between 2024 and 2025</p>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card growth">
+                        <h3>
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-green)">
+                                <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                            </svg>
+                            Top Account Growth
+                        </h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Account</th>
+                                    <th>2024</th>
+                                    <th>2025</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="rank">1</span></td>
+                                    <td><strong>Portland Group Billerica</strong></td>
+                                    <td>$151K</td>
+                                    <td>$196K</td>
+                                    <td><span class="change-badge positive">+30%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">2</span></td>
+                                    <td><strong>VENT001</strong></td>
+                                    <td>$94K</td>
+                                    <td>$124K</td>
+                                    <td><span class="change-badge positive">+31%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">3</span></td>
+                                    <td><strong>Best Plumbing Somers</strong></td>
+                                    <td>$149K</td>
+                                    <td>$179K</td>
+                                    <td><span class="change-badge positive">+20%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">4</span></td>
+                                    <td><strong>Hollywood Builders Hardware</strong></td>
+                                    <td>$81K</td>
+                                    <td>$97K</td>
+                                    <td><span class="change-badge positive">+19%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">5</span></td>
+                                    <td><strong>Bath Emporium Ontario</strong></td>
+                                    <td>$113K</td>
+                                    <td>$129K</td>
+                                    <td><span class="change-badge positive">+14%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">6</span></td>
+                                    <td><strong>Wilkinson Supply Raleigh</strong></td>
+                                    <td>$70K</td>
+                                    <td>$80K</td>
+                                    <td><span class="change-badge positive">+14%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">7</span></td>
+                                    <td><strong>Studio 41 Highland Park</strong></td>
+                                    <td>$455K</td>
+                                    <td>$506K</td>
+                                    <td><span class="change-badge positive">+11%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">8</span></td>
+                                    <td><strong>Republic Plumbing Norwood</strong></td>
+                                    <td>$81K</td>
+                                    <td>$91K</td>
+                                    <td><span class="change-badge positive">+13%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="comparison-card decline">
+                        <h3>
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-red)">
+                                <path d="M17 7l-9.2 9.2M7 7v10h10"/>
+                            </svg>
+                            Top Account Decline
+                        </h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Account</th>
+                                    <th>2024</th>
+                                    <th>2025</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="rank">1</span></td>
+                                    <td><strong>Decor Planet Brooklyn</strong></td>
+                                    <td>$179K</td>
+                                    <td>$72K</td>
+                                    <td><span class="change-badge negative">-60%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">2</span></td>
+                                    <td><strong>Herald Wholesale</strong></td>
+                                    <td>$280K</td>
+                                    <td>$142K</td>
+                                    <td><span class="change-badge negative">-49%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">3</span></td>
+                                    <td><strong>Canaroma Bath & Tile</strong></td>
+                                    <td>$185K</td>
+                                    <td>$102K</td>
+                                    <td><span class="change-badge negative">-45%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">4</span></td>
+                                    <td><strong>Taps Wholesale Toronto</strong></td>
+                                    <td>$152K</td>
+                                    <td>$102K</td>
+                                    <td><span class="change-badge negative">-33%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">5</span></td>
+                                    <td><strong>Ferguson Bayport</strong></td>
+                                    <td>$198K</td>
+                                    <td>$142K</td>
+                                    <td><span class="change-badge negative">-28%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">6</span></td>
+                                    <td><strong>Faucets N' Fixtures Orange</strong></td>
+                                    <td>$155K</td>
+                                    <td>$112K</td>
+                                    <td><span class="change-badge negative">-28%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">7</span></td>
+                                    <td><strong>B.A. Robinson Edmonton</strong></td>
+                                    <td>$101K</td>
+                                    <td>$71K</td>
+                                    <td><span class="change-badge negative">-29%</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="rank">8</span></td>
+                                    <td><strong>Atlas Immerse</strong></td>
+                                    <td>$183K</td>
+                                    <td>$140K</td>
+                                    <td><span class="change-badge negative">-23%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="chart-container" style="margin-top: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-secondary);">Top 15 Accounts Comparison</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="accountsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights Section -->
+        <section id="insights">
+            <div class="container">
+                <h2>Key Insights</h2>
+                <p class="section-subtitle">What the data tells us about 2024 vs 2025 performance</p>
+
+                <div class="insight-box">
+                    <h3>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                        Critical Finding: Ontario & New York Collapse
+                    </h3>
+                    <p>
+                        Our two largest markets - <strong>New York (-$299K, -16%)</strong> and <strong>Ontario (-$342K, -22%)</strong> - account for <strong>$641K of lost revenue</strong>.
+                        These markets alone represent 60% of the total YoY decline. Key accounts like <strong>Herald Wholesale (-$138K)</strong>, <strong>Decor Planet Brooklyn (-$108K)</strong>,
+                        and <strong>Canaroma (-$83K)</strong> are driving this collapse.
+                    </p>
+                </div>
+
+                <div class="insight-box">
+                    <h3>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Bright Spot: Studio 41 Highland Park
+                    </h3>
+                    <p>
+                        <strong>Studio 41 Highland Park grew +11%</strong> ($455K to $506K) while almost every other top-10 account declined.
+                        They are now our <strong>#1 account</strong> by 2025 revenue. Worth investigating: <strong>What are they doing differently?</strong>
+                        Can we replicate their success with other dealers?
+                    </p>
+                </div>
+
+                <div class="insight-box">
+                    <h3>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                        Emerging Growth: Colorado, Virginia, Nevada
+                    </h3>
+                    <p>
+                        Secondary markets are showing strength: <strong>Colorado (+$67K, +13%)</strong>, <strong>Virginia (+$65K, +64%)</strong>, and <strong>Nevada (+$60K, +32%)</strong>.
+                        Combined growth of <strong>$192K</strong>. These markets are smaller but growing - potential focus areas for expansion.
+                    </p>
+                </div>
+
+                <div class="full-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Question for VP Sales</th>
+                                <th>Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Why did Herald Wholesale drop 49%?</strong></td>
+                                <td>$280K to $142K - our 4th largest account in 2024. Lost a competitor? Personnel change?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. What happened in Arizona?</strong></td>
+                                <td>State dropped 48% ($300K to $157K). Central Arizona Supply and Studio 41 Scottsdale both down significantly.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Can we replicate Studio 41's success?</strong></td>
+                                <td>Only major account growing (+11%). What training, incentives, or support do they have that others don't?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Should we double down on Colorado?</strong></td>
+                                <td>Rampart Denver steady, state growing 13%. Potential for more dealer recruitment?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>BainUltra Sales Analysis | Data through December 23, 2025</p>
+            <p style="margin-top: 0.5rem;"><a href="index.html">View Full 10-Year Analysis</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Markets Chart
+        const marketsCtx = document.getElementById('marketsChart').getContext('2d');
+        new Chart(marketsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['NY', 'ON', 'CA', 'TX', 'MA', 'IL', 'MI', 'FL', 'QC', 'CT', 'CO', 'NJ', 'AB'],
+                datasets: [
+                    {
+                        label: '2024',
+                        data: [1840, 1582, 1164, 941, 733, 681, 741, 667, 634, 590, 528, 624, 532],
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '2025',
+                        data: [1542, 1240, 1136, 882, 753, 742, 563, 564, 646, 630, 595, 444, 471],
+                        backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                        borderColor: 'rgba(139, 92, 246, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#94a3b8' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': $' + context.raw.toLocaleString() + 'K';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255,255,255,0.05)' }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#94a3b8',
+                            callback: function(value) {
+                                return '$' + value + 'K';
+                            }
+                        },
+                        grid: { color: 'rgba(255,255,255,0.05)' }
+                    }
+                }
+            }
+        });
+
+        // Accounts Chart
+        const accountsCtx = document.getElementById('accountsChart').getContext('2d');
+        new Chart(accountsCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Home & Stone',
+                    'Studio 41 HP',
+                    'Advance Plumb.',
+                    'Herald Whsle',
+                    'Hardware Des.',
+                    'Ferguson Bay.',
+                    'BA Robinson Cal',
+                    'Portland Grp',
+                    'Briggs Omaha',
+                    'Canaroma',
+                    'Atlas Immerse',
+                    'Decor Planet',
+                    'Torrco',
+                    'Best Plumb.',
+                    'W. Nevada'
+                ],
+                datasets: [
+                    {
+                        label: '2024',
+                        data: [507, 455, 280, 280, 250, 198, 198, 151, 195, 185, 183, 179, 178, 149, 165],
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '2025',
+                        data: [460, 506, 245, 142, 264, 142, 159, 196, 194, 102, 140, 72, 162, 179, 170],
+                        backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                        borderColor: 'rgba(139, 92, 246, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#94a3b8' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': $' + context.raw.toLocaleString() + 'K';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#94a3b8',
+                            callback: function(value) {
+                                return '$' + value + 'K';
+                            }
+                        },
+                        grid: { color: 'rgba(255,255,255,0.05)' }
+                    },
+                    y: {
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255,255,255,0.05)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
